@@ -1,9 +1,15 @@
 {
-  "generated": "c18b49751c25d1e6a6ab358d7796af2cc47e35ea",
+  "generated": "1e1743a375cbca82368b7554866d290fe2d837d3",
   "minChars": 100,
   "threshold": 0.6,
-  "fileCount": 6,
-  "pupilCount": 6,
-  "skipped": [],
+  "fileCount": 7,
+  "pupilCount": 7,
+  "skipped": [
+    {
+      "path": "KWIATKOWSKI_SZYMON/07_09_2026/zad.py",
+      "pupil": "KWIATKOWSKI_SZYMON",
+      "chars": 0
+    }
+  ],
   "flagged": []
 }
