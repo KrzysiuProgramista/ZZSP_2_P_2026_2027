@@ -1,9 +1,15 @@
 {
-  "generated": "3142a17a8d8dc91e9212e88a4c2a10584ae92e33",
+  "generated": "a380fc912bf4ca2ec4aa00a664dc07fb9558a8e4",
   "minChars": 100,
   "threshold": 0.6,
-  "fileCount": 0,
-  "pupilCount": 0,
-  "skipped": [],
+  "fileCount": 1,
+  "pupilCount": 1,
+  "skipped": [
+    {
+      "path": "GAWRYSZCZAK_ADAM/tasks.py",
+      "pupil": "GAWRYSZCZAK_ADAM",
+      "chars": 0
+    }
+  ],
   "flagged": []
 }
