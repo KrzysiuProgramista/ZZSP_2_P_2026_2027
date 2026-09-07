@@ -1,13 +1,13 @@
 {
-  "generated": "a380fc912bf4ca2ec4aa00a664dc07fb9558a8e4",
+  "generated": "1e1743a375cbca82368b7554866d290fe2d837d3",
   "minChars": 100,
   "threshold": 0.6,
-  "fileCount": 1,
-  "pupilCount": 1,
+  "fileCount": 7,
+  "pupilCount": 7,
   "skipped": [
     {
-      "path": "GAWRYSZCZAK_ADAM/tasks.py",
-      "pupil": "GAWRYSZCZAK_ADAM",
+      "path": "KWIATKOWSKI_SZYMON/07_09_2026/zad.py",
+      "pupil": "KWIATKOWSKI_SZYMON",
       "chars": 0
     }
   ],
