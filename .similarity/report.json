@@ -1,15 +1,9 @@
 {
-  "generated": "c1d7f79a3afdee38fdad636c46edc030ab018529",
+  "generated": "9a5ca4478f09a43ebd782b714e8cf752a00810fe",
   "minChars": 100,
   "threshold": 0.6,
-  "fileCount": 4,
-  "pupilCount": 3,
-  "skipped": [
-    {
-      "path": "STACHURSKI_FABIAN/07_09_2026/A.py",
-      "pupil": "STACHURSKI_FABIAN",
-      "chars": 3
-    }
-  ],
+  "fileCount": 3,
+  "pupilCount": 2,
+  "skipped": [],
   "flagged": []
 }
