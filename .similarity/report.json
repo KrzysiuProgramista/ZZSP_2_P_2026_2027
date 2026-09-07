@@ -1,9 +1,9 @@
 {
-  "generated": "1e1743a375cbca82368b7554866d290fe2d837d3",
+  "generated": "d43c3af7b3fd8a308ca1f8a7fca943f357e47b28",
   "minChars": 100,
   "threshold": 0.6,
-  "fileCount": 7,
-  "pupilCount": 7,
+  "fileCount": 9,
+  "pupilCount": 8,
   "skipped": [
     {
       "path": "KWIATKOWSKI_SZYMON/07_09_2026/zad.py",
