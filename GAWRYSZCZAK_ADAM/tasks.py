@@ -6,7 +6,7 @@ from datetime import datetime
 class Task(ABC):
     def __init__(self, title, created_at=None):
         self.title = title
-        self.created_at = created_at if created_at else datetime.now()
+
         self._done = False
 
     @abstractmethod
