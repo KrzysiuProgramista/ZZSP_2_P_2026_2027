@@ -32,4 +32,19 @@ class RecurringTask(TimedTask):
     def __init__(Self, title, minutes, times_per_week):
         super().__init__(title,minutes)
         self.times_per_week = times_per_week
-    def 
+    def estimate_minutes(Self):
+        return self.minutes * self.times_per_week
+
+
+t1 = SimpleTask("Nauka", 30)
+t2 = TimedTask("Trening", 60)
+t3 = RecurringTask("Python", 20, 3)
+
+t1.complete()
+
+lista = TaskList()
+
+lista.add(1)
+lista.add(2)
+lista.add(3)
+
