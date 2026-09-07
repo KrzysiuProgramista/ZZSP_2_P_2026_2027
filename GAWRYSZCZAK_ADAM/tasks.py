@@ -1,21 +1,17 @@
-# a)
+#a)
 from abc import ABC, abstractmethod
-from datetime import datetime
-
 
 class Task(ABC):
-    def __init__(self, title, created_at=None):
+    def __init__(self, title):
         self.title = title
+        self.created_at = None
+        self.done = False
 
-        self._done = False
-
-    @abstractmethod
+    @abstracmethod
     def estimate_minutes(self):
         pass
-
     def complete(self):
         self._done = True
-
     @property
     def done(self):
         return self._done
