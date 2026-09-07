@@ -1,12 +1,12 @@
 {
-  "generated": "daafa144f0769ea4cabb72c1b018bf8b89b3be12",
+  "generated": "eeda298cd7752d3153b27770bd0b2905b8d245e2",
   "minChars": 100,
   "threshold": 0.6,
   "fileCount": 4,
   "pupilCount": 3,
   "skipped": [
     {
-      "path": "STACHURSKI_FABIAN/07_09_2026/A.py",
+      "path": "STACHURSKI_FABIAN/07_09_2026/Tasks.py",
       "pupil": "STACHURSKI_FABIAN",
       "chars": 3
     }
