@@ -1,5 +1,5 @@
 {
-  "generated": "d43c3af7b3fd8a308ca1f8a7fca943f357e47b28",
+  "generated": "276f4768eab220122507ba9f789310765c22f30f",
   "minChars": 100,
   "threshold": 0.6,
   "fileCount": 9,
@@ -11,5 +11,147 @@
       "chars": 0
     }
   ],
-  "flagged": []
+  "flagged": [],
+  "notices": [
+    {
+      "pupils": [
+        "BOBROWSKI_ALAN",
+        "PAWLOWICZ_WOJCIECH"
+      ],
+      "paths": [
+        "BOBROWSKI_ALAN/07_09_2026/tasks.py",
+        "PAWLOWICZ_WOJCIECH/07_09_2026/tasks.py"
+      ],
+      "jaccard": 0.4495,
+      "text": 0.8705,
+      "struct": 0.7297,
+      "chars": 2186
+    },
+    {
+      "pupils": [
+        "GAWRYSZCZAK_ADAM",
+        "STACHURSKI_FABIAN"
+      ],
+      "paths": [
+        "GAWRYSZCZAK_ADAM/07_09_2026/tasks.py",
+        "STACHURSKI_FABIAN/07_09_2026/Tasks.py"
+      ],
+      "jaccard": 0.355,
+      "text": 0.7433,
+      "struct": null,
+      "chars": 961
+    },
+    {
+      "pupils": [
+        "PAWLOWSKI_FILIP",
+        "ROZYCKI_NATAN"
+      ],
+      "paths": [
+        "PAWLOWSKI_FILIP/07_09_2026/tasks.py",
+        "ROZYCKI_NATAN/07_09_2026/task.py"
+      ],
+      "jaccard": 0.2996,
+      "text": 0.7607,
+      "struct": 0.6964,
+      "chars": 2408
+    },
+    {
+      "pupils": [
+        "PAWLOWSKI_FILIP",
+        "STACHURSKI_FABIAN"
+      ],
+      "paths": [
+        "PAWLOWSKI_FILIP/07_09_2026/tasks.py",
+        "STACHURSKI_FABIAN/07_09_2026/Tasks.py"
+      ],
+      "jaccard": 0.1836,
+      "text": 0.501,
+      "struct": null,
+      "chars": 961
+    },
+    {
+      "pupils": [
+        "PAWLOWICZ_WOJCIECH",
+        "ZAHORODNII_DMYTRO"
+      ],
+      "paths": [
+        "PAWLOWICZ_WOJCIECH/07_09_2026/tasks.py",
+        "ZAHORODNII_DMYTRO/07_09_2026/tasks.py"
+      ],
+      "jaccard": 0.1687,
+      "text": 0.7017,
+      "struct": 0.6557,
+      "chars": 2186
+    },
+    {
+      "pupils": [
+        "BOBROWSKI_ALAN",
+        "GAWRYSZCZAK_ADAM"
+      ],
+      "paths": [
+        "BOBROWSKI_ALAN/07_09_2026/tasks.py",
+        "GAWRYSZCZAK_ADAM/07_09_2026/tasks.py"
+      ],
+      "jaccard": 0.1634,
+      "text": 0.6503,
+      "struct": null,
+      "chars": 1232
+    },
+    {
+      "pupils": [
+        "BOBROWSKI_ALAN",
+        "STACHURSKI_FABIAN"
+      ],
+      "paths": [
+        "BOBROWSKI_ALAN/07_09_2026/tasks.py",
+        "STACHURSKI_FABIAN/07_09_2026/Tasks.py"
+      ],
+      "jaccard": 0.1548,
+      "text": 0.4737,
+      "struct": null,
+      "chars": 961
+    },
+    {
+      "pupils": [
+        "GAWRYSZCZAK_ADAM",
+        "PAWLOWICZ_WOJCIECH"
+      ],
+      "paths": [
+        "GAWRYSZCZAK_ADAM/07_09_2026/tasks.py",
+        "PAWLOWICZ_WOJCIECH/07_09_2026/tasks.py"
+      ],
+      "jaccard": 0.1524,
+      "text": 0.6232,
+      "struct": null,
+      "chars": 1232
+    },
+    {
+      "pupils": [
+        "GAWRYSZCZAK_ADAM",
+        "PAWLOWSKI_FILIP"
+      ],
+      "paths": [
+        "GAWRYSZCZAK_ADAM/07_09_2026/tasks.py",
+        "PAWLOWSKI_FILIP/07_09_2026/tasks.py"
+      ],
+      "jaccard": 0.1402,
+      "text": 0.5165,
+      "struct": null,
+      "chars": 1232
+    },
+    {
+      "pupils": [
+        "PAWLOWICZ_WOJCIECH",
+        "STACHURSKI_FABIAN"
+      ],
+      "paths": [
+        "PAWLOWICZ_WOJCIECH/07_09_2026/tasks.py",
+        "STACHURSKI_FABIAN/07_09_2026/Tasks.py"
+      ],
+      "jaccard": 0.1397,
+      "text": 0.4385,
+      "struct": null,
+      "chars": 961
+    }
+  ]
 }
