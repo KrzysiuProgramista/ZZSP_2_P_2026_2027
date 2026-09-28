@@ -1,1 +1,2 @@
-
+Bug A = w metodzie is_facing_wall uzyto >= zamisat == 
+Bug B = W metodzie is_at_cheese warunek celu sprawdzal wspolrzedne _hi + 1 zamist _hi
