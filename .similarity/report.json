@@ -1,8 +1,8 @@
 {
-  "generated": "bf1d6fd6139402cd4c75fcce3c43d9f4be2fc730",
+  "generated": "03345c8f2e00e31d2b9221b1a2d7f32c6fc5e68a",
   "minChars": 100,
   "threshold": 0.6,
-  "fileCount": 17,
+  "fileCount": 18,
   "pupilCount": 9,
   "skipped": [
     {
@@ -45,6 +45,25 @@
       "text": 1.0,
       "struct": 1.0,
       "chars": 2186
+    },
+    {
+      "sameCommit": false,
+      "later": {
+        "pupil": "ROZYCKI_NATAN",
+        "path": "ROZYCKI_NATAN/06_10_2026/debugging_lab.py",
+        "assignment": "06_10_2026",
+        "added": "2026-10-04T21:18:42+02:00"
+      },
+      "earlier": {
+        "pupil": "BOBROWSKI_ALAN",
+        "path": "BOBROWSKI_ALAN/06_10_2026/debugging_lab.py",
+        "assignment": "06_10_2026",
+        "added": "2026-10-04T20:12:31+02:00"
+      },
+      "jaccard": 0.6034,
+      "text": 0.6487,
+      "struct": 0.677,
+      "chars": 3538
     }
   ],
   "notices": [
