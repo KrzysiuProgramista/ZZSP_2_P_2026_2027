@@ -1,10 +1,25 @@
 {
-  "generated": "fceaa463ed99d9dd5111dc35b3c41321c2f8c9f4",
+  "generated": "fb7763c561d38d475eaae51ecde1591b57d09fe7",
   "minChars": 100,
   "threshold": 0.6,
-  "fileCount": 10,
+  "fileCount": 16,
   "pupilCount": 9,
   "skipped": [
+    {
+      "path": "BOBROWSKI_ALAN/28_09_2026/bug_b_solution.py",
+      "pupil": "BOBROWSKI_ALAN",
+      "chars": 97
+    },
+    {
+      "path": "BOBROWSKI_ALAN/28_09_2026/bug_c_solution.py",
+      "pupil": "BOBROWSKI_ALAN",
+      "chars": 68
+    },
+    {
+      "path": "BOBROWSKI_ALAN/28_09_2026/bug_e_solution.py",
+      "pupil": "BOBROWSKI_ALAN",
+      "chars": 89
+    },
     {
       "path": "KWIATKOWSKI_SZYMON/07_09_2026/zad.py",
       "pupil": "KWIATKOWSKI_SZYMON",
