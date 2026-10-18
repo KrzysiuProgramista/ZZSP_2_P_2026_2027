@@ -1,5 +1,5 @@
 {
-  "generated": "2fe5b2df8df6293970226d22efbaf3b182aa5fd4",
+  "generated": "66a7c4b127d825582afb68d5e3c23b5917304ae6",
   "minChars": 100,
   "threshold": 0.6,
   "fileCount": 19,
@@ -31,9 +31,9 @@
       "sameCommit": false,
       "later": {
         "pupil": "KISIEL_FILIP",
-        "path": "KISIEL_FILIP/task.py",
-        "assignment": "(root)",
-        "added": "2026-09-27T20:32:55+02:00"
+        "path": "KISIEL_FILIP/07_09_2026/task.py",
+        "assignment": "07_09_2026",
+        "added": "2026-10-18T23:52:27+02:00"
       },
       "earlier": {
         "pupil": "PAWLOWICZ_WOJCIECH",
@@ -93,7 +93,7 @@
       ],
       "paths": [
         "BOBROWSKI_ALAN/07_09_2026/tasks.py",
-        "KISIEL_FILIP/task.py"
+        "KISIEL_FILIP/07_09_2026/task.py"
       ],
       "jaccard": 0.4495,
       "text": 0.8705,
@@ -162,7 +162,7 @@
         "ZAHORODNII_DMYTRO"
       ],
       "paths": [
-        "KISIEL_FILIP/task.py",
+        "KISIEL_FILIP/07_09_2026/task.py",
         "ZAHORODNII_DMYTRO/07_09_2026/tasks.py"
       ],
       "jaccard": 0.1687,
@@ -219,7 +219,7 @@
       ],
       "paths": [
         "GAWRYSZCZAK_ADAM/07_09_2026/tasks.py",
-        "KISIEL_FILIP/task.py"
+        "KISIEL_FILIP/07_09_2026/task.py"
       ],
       "jaccard": 0.1524,
       "text": 0.6232,
