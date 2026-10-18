@@ -1,0 +1,5 @@
+Case 3:
+
+Whats wrong: Instead of removing the first element from the queue using popleft() the code just looks at self.queue[0] without taking it out
+
+Effect: The solver gets stuck on the start tile forever until it hits the step limit and stops   

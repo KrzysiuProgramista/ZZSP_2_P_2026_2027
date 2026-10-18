@@ -1,0 +1,5 @@
+Case 5:
+
+Whats wrong: The code checks if a space is currently in self.queue instead of checking if it was already visited (self.previous)
+
+Effect: The solver loses track of visited spaces and fails to build the path correctly   

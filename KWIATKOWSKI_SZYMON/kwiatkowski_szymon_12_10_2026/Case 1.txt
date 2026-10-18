@@ -1,0 +1,6 @@
+Case 1
+
+Whats wrong: The code looks for the cheese in the wrong spot instead of checking if we reached self.goal, it checks the cell one space to the left (self.goal[1] - 1)   
+
+
+Effect: The search steps right over the cheese without stopping and gets stuck in an infinite loop  

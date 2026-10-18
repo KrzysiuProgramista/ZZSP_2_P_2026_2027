@@ -1,0 +1,6 @@
+Case 2:
+
+Whats wrong: The code checks if the coordinates are above 0 (next_row >= 0) but forgets to check if they go past the right or bottom edges of the map
+
+
+Effect: The program tries to read outside the array and crashes with an IndexError

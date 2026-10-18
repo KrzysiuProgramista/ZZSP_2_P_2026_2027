@@ -1,0 +1,5 @@
+Case 4:
+
+Whats wrong: While calculating the new position the code mixes up rows and columns (wrong_row = row + dc)
+   
+Effect: Movement breaks completely sending the player jumping to random wrong coordinates   
