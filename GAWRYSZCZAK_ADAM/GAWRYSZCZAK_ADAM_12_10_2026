@@ -1,0 +1,107 @@
+CHALLENGE 5: A transfer that partially succeeds
+EXPECTED: Odrzucony przelew nie zmienia stanu żadnego konta — dla "X" słownik accounts zostaje jako {"A": 100, "B": 40}.
+OBSERVED: Wyskakuje KeyError: 'X' na accounts[recipient] += amount, ale z konta "A" ubyło już 30 i w słowniku jest {"A": 70, "B": 40}.
+BREAKPOINT: Na linijce accounts[sender] -= amount.
+FIRST WRONG STATE: Linijka accounts[sender] -= amount zabiera 30 z konta "A", zanim program sprawdzi, czy konto "X" istnieje.
+HYPOTHESIS: Funkcja zmienia saldo nadawcy przed sprawdzeniem wszystkich warunków (czy oba konta są w słowniku i czy kwota jest dodatnia).
+VERIFICATION:
+def transfer(accounts, sender, recipient, amount):
+    if sender not in accounts or recipient not in accounts:
+        return False
+    if amount <= 0 or accounts[sender] < amount:
+        return False
+    accounts[sender] -= amount
+    accounts[recipient] += amount
+    return True
+
+accounts = {"A": 100, "B": 40}
+assert transfer(accounts, "A", "X", 30) == False
+assert transfer(accounts, "A", "B", -10) == False
+assert transfer(accounts, "B", "A", 100) == False
+assert accounts == {"A": 100, "B": 40}
+assert transfer(accounts, "A", "B", 30) == True
+assert accounts == {"A": 70, "B": 70}
+
+CHALLENGE 4: The same room is booked twice
+EXPECTED: Każdy dzień ma własny słownik i listę, więc rezerwacja sali "A" w "Mon" nie rezerwuje jej w "Tue".
+OBSERVED: Po dopisaniu "10:00" do poniedziałku, godzina pojawia się też we wtorek, a schedule["Mon"] is schedule["Tue"] w Watch daje True.
+BREAKPOINT: Na linijce schedule["Mon"]["A"].append("10:00").
+FIRST WRONG STATE: W drugim obrocie pętli (day = "Tue") linijka schedule[day] = empty_day przypisuje wtorkowi ten sam słownik empty_day, który wcześniej dostał poniedziałek.
+HYPOTHESIS: empty_day jest tworzony raz przed pętlą — wystarczy przenieść tę linijkę do środka pętli for, żeby każdy dzień dostawał nowy słownik.
+VERIFICATION:
+def create_schedule(days, rooms):
+    schedule = {}
+    for day in days:
+        empty_day = {room: [] for room in rooms}
+        schedule[day] = empty_day
+    return schedule
+
+schedule = create_schedule(["Mon", "Tue"], ["A"])
+schedule["Mon"]["A"].append("10:00")
+assert schedule["Mon"]["A"] == ["10:00"]
+assert schedule["Tue"]["A"] == []
+assert (schedule["Mon"] is schedule["Tue"]) == False
+
+CHALLENGE 3: The disappearing grades
+EXPECTED: Funkcja usuwa ujemne punkty, a wyniki powyżej 100 zamienia na 100 — dla [-1, -2, 105, 80] zwraca [100, 80].
+OBSERVED: Zwraca [-2, 105, 80] — ujemne -2 zostaje na liście (Bug A), a 105 nie zmienia się na 100 (Bug B).
+BREAKPOINT: Na linijce if score < 0:.
+FIRST WRONG STATE: scores.remove(score) przesuwa listę w lewo i pętla przeskakuje -2 (Bug A), a score = 100 nadpisuje tylko zmienną pętli zamiast elementu w liście (Bug B).
+HYPOTHESIS: Modyfikowanie listy w trakcie iteracji psuje indeksy, a zmiana zmiennej pętli nie zmienia listy — trzeba zbierać poprawione wyniki do nowej listy.
+VERIFICATION:
+def normalize_scores(scores):
+    result = []
+    for score in scores:
+        if score >= 0:
+            if score > 100:
+                score = 100
+            result.append(score)
+    return result
+
+assert normalize_scores([-1, -2, 105, 80]) == [100, 80]
+assert normalize_scores([]) == []
+assert normalize_scores([10, 50]) == [10, 50]
+assert normalize_scores([-1, 101]) == [100]
+
+CHALLENGE 2: Stop at the one bad record
+EXPECTED: Pętla przechodzi przez wszystkie 1000 rekordów i pomija uszkodzony rekord bez wywalania błędu.
+OBSERVED: Program wysypuje się przy i == 737 z błędem TypeError, bo próbuje wykonać None + 1.
+BREAKPOINT: Warunkowy breakpoint na linijce adjusted = record["value"] + 1 z warunkiem i == 737.
+FIRST WRONG STATE: Linijka records[737]["value"] = None ustawia brak wartości, przez co dla i == 737 wyrażenie record["value"] + 1 próbuje dodać 1 do None.
+HYPOTHESIS: Kod zakłada, że "value" to zawsze liczba — przed dodaniem 1 trzeba sprawdzić, czy record["value"] nie jest None.
+VERIFICATION:
+records = [
+    {"id": i, "value": i * 2}
+    for i in range(1000)
+]
+records[737]["value"] = None
+
+for i, record in enumerate(records):
+    if record["value"] is not None:
+        adjusted = record["value"] + 1
+
+assert records[737]["value"] is None
+assert records[0]["value"] + 1 == 1
+
+CHALLENGE 1: Two largest distinct values
+EXPECTED: Funkcja zwraca dwie największe różne liczby — dla [10, 12, 11, 15] wynikiem jest (15, 12).
+OBSERVED: Dla [10, 12, 11, 15] zwraca (15, 11), gubiąc 12, a dla [5, 5, 4] daje (5, 5) zamiast (5, 4).
+BREAKPOINT: Na linijce if n > largest:.
+FIRST WRONG STATE: Gdy n = 12 (a potem 15), linijka largest = n nadpisuje stare maksimum bez przepisania go wcześniej do second, a startowe second = numbers[0] blokuje zmianę, gdy największa liczba jest na początku listy.
+HYPOTHESIS: Przy znalezieniu nowego maksimum trzeba najpierw przepisać stare largest do second, zacząć od -inf i sprawdzać n != largest.
+VERIFICATION:
+def two_largest(numbers):
+    largest = float("-inf")
+    second = float("-inf")
+    for n in numbers:
+        if n > largest:
+            second = largest
+            largest = n
+        elif n > second and n != largest:
+            second = n
+    return largest, second
+
+assert two_largest([10, 12, 11, 15]) == (15, 12)
+assert two_largest([3, 9, 1, 7]) == (9, 7)
+assert two_largest([5, 5, 4]) == (5, 4)
+assert two_largest([-8, -2, -4]) == (-2, -4)
