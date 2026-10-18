@@ -1,0 +1,37 @@
+CASE 1 - wrong goal comparison
+
+EXPECTED
+  The search should stop when the dequeued cell equals self.goal = (10,9),
+  and print "Status: SOLVED", Moves: 21, Search steps: 39.
+
+OBSERVED
+  "Status: NOT SOLVED - the search exhausted all reachable cells."
+  The queue empties after 52 search steps with visited = 52. The goal
+  (10,9) IS in self.previous (it was discovered and enqueued), so the maze
+  is reachable, but the program still reports failure.
+
+BREAKPOINT
+  In faulty_solve at the line "if current == (self.goal[0], self.goal[1] - 1)".
+  Reason: the BFS neighbour expansion looks correct (visited keeps growing
+  normally), so the failure must be in the termination test. I watched
+  `current` and `self.goal` when `current` became (10,9).
+
+FIRST WRONG STATE
+  The first instruction that makes the state wrong is the goal test itself:
+  when current = (10,9) (the real goal), it is compared with (10,8), which
+  is a wall '#'. The comparison is False, so the search does not stop and
+  continues until the queue is empty. The target (10,8) can never be
+  dequeued because walls are never enqueued.
+
+HYPOTHESIS
+  The rule "stop when current == self.goal" is violated: the code compares
+  with a shifted cell (goal column - 1). Trace evidence:
+    search: position=(10,9), ... (dequeued, but not recognised as goal)
+    Status: NOT SOLVED after 52 steps.
+  Fix: replace the condition with `if current == self.goal:`.
+
+VERIFICATION
+  1. create_maze(): expect SOLVED, Moves 21, Search steps 39.
+  2. create_easy_maze(): expect SOLVED, Moves 6.
+  3. A maze where C is walled off: must still print NOT SOLVED
+     (confirms the fix does not make the program always succeed).

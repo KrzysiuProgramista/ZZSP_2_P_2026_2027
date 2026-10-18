@@ -1,0 +1,45 @@
+CASE 5 - visited test uses the queue instead of `previous`
+
+EXPECTED
+  A cell must be enqueued at most once: the "already seen" test must use
+  self.previous (all discovered cells), and previous[cell] must never be
+  overwritten. Result: SOLVED, Moves 21, Search steps 39.
+
+OBSERVED
+  The search needs many more steps than necessary (the goal is dequeued
+  only at step 200, visited stays at 40) because cells that already left
+  the queue are enqueued again. After the goal is found the program does
+  not print a normal result: reconstruct_path() never terminates (the path
+  list grows endlessly and the program hangs / uses growing memory), so
+  "Status: SOLVED" is never printed.
+
+BREAKPOINT
+  (a) At the neighbour loop `if next_position not in self.queue` at step 2
+  (current = (1,2)), watching self.previous. (b) Inside reconstruct_path,
+  watching `current`. Reason: the trace showed the same cells being
+  searched repeatedly and visited not growing, which points to the
+  "seen" test; the hang is a consequence in the path reconstruction.
+
+FIRST WRONG STATE
+  Step 1: current = (1,1), queue [(1,2)], previous = {S: None, (1,2): S}.
+  Step 2: current = (1,2) is dequeued; neighbour (1,1) is not in the queue
+  (it was already removed), so the code executes
+  previous[(1,1)] = (1,2) - this overwrites previous[S] = None and creates
+  the cycle (1,1) <-> (1,2). Similarly previous[(1,2)] is later replaced
+  by (1,3), and so on.
+  The defect location (the membership test) and the failure location
+  (reconstruct_path loop `while current is not None`) are different: the
+  chain of predecessors never reaches None.
+
+HYPOTHESIS
+  The rule "previous records each cell's FIRST discoverer and marks it
+  visited forever" is violated. Dequeued cells look unvisited because only
+  the current queue contents are checked. Fix:
+  `if next_position not in self.previous:`
+
+VERIFICATION
+  1. create_maze(): SOLVED, Moves 21, Search steps 39 (instead of 200).
+  2. create_easy_maze(): SOLVED, Moves 6.
+  3. Check previous[S] is None after the search finishes and that the
+     visited count equals the number of distinct enqueued cells.
+  4. Unreachable-goal maze: NOT SOLVED (no endless loop).

@@ -1,0 +1,39 @@
+CASE 2 - incomplete bounds check in neighbors()
+
+EXPECTED
+  neighbors() must only yield cells inside the grid:
+  0 <= row < rows and 0 <= col < cols.
+
+OBSERVED
+  On create_maze() the program prints SOLVED (21 moves, 39 steps), so the
+  defect is LATENT: it does not show up with this maze. The reason is that
+  every border cell of the maze is a wall except C, and BFS stops as soon
+  as C is dequeued, so C is never expanded. The faulty check only tests
+  next_row >= 0 and next_col >= 0 (upper bounds rows/cols are missing).
+  Expanding any open cell on the last row or last column would give
+  IndexError: list index out of range (e.g. cell (10,9) -> down = (11,9)).
+
+BREAKPOINT
+  At the first line inside faulty_neighbors after computing next_row and
+  next_col, with a conditional breakpoint
+  `next_row >= self.rows or next_col >= self.cols`. Reason: the symptom
+  (IndexError) would occur later in is_open(), but the real defect is in
+  the caller's bounds condition. is_open() is only the place of the crash.
+
+FIRST WRONG STATE
+  The condition `if next_row >= 0 and next_col >= 0:` lets an out-of-range
+  coordinate such as (11,9) pass to self.is_open(11,9), which indexes
+  self.grid[11] and raises IndexError. The crash location (is_open) is not
+  the location of the defect (neighbors).
+
+HYPOTHESIS
+  The invariant "neighbour coordinates are inside the grid" is violated
+  because the upper bounds were dropped. Fix:
+  `if 0 <= next_row < self.rows and 0 <= next_col < self.cols:`
+
+VERIFICATION
+  1. create_maze(): still SOLVED, Moves 21, Search steps 39.
+  2. create_easy_maze(): SOLVED, Moves 6.
+  3. A maze with an open corridor on the bottom row / right column and C
+     elsewhere (e.g. "#S..", "####" replaced by open border cells): the
+     faulty version raises IndexError, the fixed version does not.

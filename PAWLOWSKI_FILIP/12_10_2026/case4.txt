@@ -1,0 +1,39 @@
+CASE 4 - wrong coordinate used for the next row
+
+EXPECTED
+  From S = (1,1) the neighbours should be (1,2) (RIGHT) and (2,1) is a
+  wall, (0,1) is a wall, (1,0) is a wall; so the search must continue to
+  (1,2), (1,3), ... and reach C.
+
+OBSERVED
+  "Status: NOT SOLVED - the search exhausted all reachable cells." after
+  only 1 search step, visited = 1, queue_size = 0. The search stops
+  immediately at the start cell.
+
+BREAKPOINT
+  Inside faulty_neighbors for position (1,1), on the `yield`/`is_open`
+  line, stepping through the four directions. Reason: after one step the
+  queue is already empty, so no neighbour was accepted; the defect must be
+  in neighbor generation.
+
+FIRST WRONG STATE
+  The line `wrong_row = row + dc` computes the row from the COLUMN delta.
+  For (1,1):
+    UP    (-1,0): wrong_row = 1+0 = 1 -> cell (1,1) itself (already visited)
+    RIGHT (0,1):  wrong_row = 1+1 = 2 -> cell (2,2) = '#', rejected
+                  (correct cell is (1,2))
+    DOWN  (1,0):  wrong_row = 1+0 = 1 -> cell (1,1) itself (already visited)
+    LEFT  (0,-1): wrong_row = 1-1 = 0 -> cell (0,0) = '#', rejected
+  Nothing new is enqueued. The bounds check uses next_row but the yielded
+  and tested cell uses wrong_row, so the check and the move disagree.
+
+HYPOTHESIS
+  The invariant "neighbour = (row + dr, col + dc)" is violated: dr is
+  replaced by dc. Fix: delete wrong_row and use
+  `if self.is_open(next_row, next_col): yield (next_row, next_col), direction`
+
+VERIFICATION
+  1. create_maze(): SOLVED, Moves 21, Search steps 39.
+  2. create_easy_maze(): SOLVED, Moves 6.
+  3. Trace of the first expansion of (1,1) must show exactly one new
+     neighbour, (1,2), with direction RIGHT.
