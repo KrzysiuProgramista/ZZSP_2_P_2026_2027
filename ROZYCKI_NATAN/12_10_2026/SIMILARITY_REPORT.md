@@ -8,7 +8,9 @@ Pupil folder: `ROZYCKI_NATAN`
 
 | your file | similarity | length |
 |---|---|---|
-| `ROZYCKI_NATAN/06_10_2026/debugging_lab.py` | **60%** | 3538 chars |
+| `ROZYCKI_NATAN/12_10_2026/debugging_lab.py` | **60%** | 3538 chars |
+| `ROZYCKI_NATAN/12_10_2026/debugging_lab.py` | **60%** | 3538 chars |
+| `ROZYCKI_NATAN/12_10_2026/debugging_lab.py` | **60%** | 3538 chars |
 
 Flagged because the overlap is at or above 60% on a substantial amount of code.
 
