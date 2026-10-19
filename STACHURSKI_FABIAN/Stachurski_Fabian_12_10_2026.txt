@@ -1,0 +1,64 @@
+Case 1: Premature Goal Termination
+EXPECTED: The maze solver should search until current position matches self.goal (C, the cheese), reconstruct the path from self.previous, and output Status: SOLVED.
+
+OBSERVED: The program terminates and reports Status: SOLVED prematurely when the search reaches the cell immediately to the left of the cheese (self.goal[0], self.goal[1] - 1), before actually stepping onto C.
+
+BREAKPOINT: Set inside solve() at the target check: if current == (self.goal[0], self.goal[1] - 1):. Placed here to inspect why the search stops one column short of the target symbol.
+
+FIRST WRONG STATE: The conditional check evaluates to True one step too early, causing reconstruct_path() to build a path ending at the neighbor cell instead of the actual goal coordinates.
+
+HYPOTHESIS: The target comparison violates the assumption that the search terminates exclusively at the exact goal coordinate self.goal.
+
+VERIFICATION: Changing the condition back to if current == self.goal: correctly solves both the default maze and create_easy_maze(), outputting Status: SOLVED with the complete path terminating at C.
+
+Case 2: Unbounded Grid Indexing
+EXPECTED: The neighbors() generator should yield only valid neighbor coordinates that lie strictly within the grid boundaries (0 <= next_row < self.rows and 0 <= next_col < self.cols).
+
+OBSERVED: The program crashes with an IndexError: list index out of range when evaluating self.is_open(next_row, next_col) near the bottom or right edges of the maze.
+
+BREAKPOINT: Set inside faulty_neighbors() at the bounds condition if next_row >= 0 and next_col >= 0: to observe coordinate generation along the maze boundaries.
+
+FIRST WRONG STATE: next_row or next_col exceeds self.rows - 1 or self.cols - 1 because upper bounds checks are missing, passing invalid indices to is_open().
+
+HYPOTHESIS: The coordinate validation rule violates array safety by omitting upper limits (< self.rows and < self.cols).
+
+VERIFICATION: Updating the check to if 0 <= next_row < self.rows and 0 <= next_col < self.cols: prevents IndexError exceptions and successfully completes maze traversal across all test cases.
+
+Case 3: Infinite Queue Stagnation
+EXPECTED: Breadth-First Search (BFS) must dequeue elements using self.queue.popleft() to systematically explore adjacent cells layer by layer.
+
+OBSERVED: The search gets trapped inspecting self.queue[0] repeatedly without removing it, leading to zero progress (move_count increments infinitely until max_steps triggers Status: STOPPED).
+
+BREAKPOINT: Set at current = self.queue[0] inside the while self.queue: loop in solve() to monitor queue state and pointer advancement.
+
+FIRST WRONG STATE: self.queue remains static with length 1 (self.start), causing current to endlessly re-evaluate the starting position.
+
+HYPOTHESIS: Accessing the queue via indexing (self.queue[0]) instead of extraction (popleft()) violates the FIFO queue contract required for BFS.
+
+VERIFICATION: Replacing current = self.queue[0] with current = self.queue.popleft() allows the queue to drain properly, discovering the path to C within expected search steps.
+
+Case 4: Axis-Swapped Offset Calculation
+EXPECTED: Moving in directions (dr, dc) should correctly update row coordinates using dr and column coordinates using dc.
+
+OBSERVED: The search produces invalid paths or fails to find the cheese (Status: NOT SOLVED), generating erroneous jumps across the grid.
+
+BREAKPOINT: Set inside faulty_neighbors() at wrong_row = row + dc to inspect coordinate math during neighbor expansion.
+
+FIRST WRONG STATE: wrong_row incorrectly combines row position with column delta (dc), scrambling spatial movement.
+
+HYPOTHESIS: The row increment calculation violates spatial consistency by using the column offset instead of the row offset.
+
+VERIFICATION: Correcting the line to next_row = row + dr ensures orthogonal movement aligns with DIRECTIONS, restoring successful pathfinding.
+
+Case 5: Inefficient Visited Membership Check
+EXPECTED: Newly discovered neighbor positions should be checked against the visited history (self.previous) to ensure each reachable cell is processed at most once.
+
+OBSERVED: The search executes an exorbitant number of steps (or hits max_steps) because next_position not in self.queue checks active queue membership rather than visited history, causing visited nodes to be repeatedly re-added.
+
+BREAKPOINT: Set in the neighbor loop at if next_position not in self.queue: to track duplicate additions into the deque.
+
+FIRST WRONG STATE: self.previous fails to filter out already explored nodes once they leave the queue, leading to redundant graph expansion and performance degradation.
+
+HYPOTHESIS: Using the transient queue for duplicate filtering violates graph search principles, which require tracking historical visited state (self.previous).
+
+VERIFICATION: Changing the condition to if next_position not in self.previous: restricts each cell to a single queue insertion, successfully solving the mazes efficiently.
