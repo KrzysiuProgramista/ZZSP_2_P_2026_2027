@@ -1,0 +1,27 @@
+2026-10-24 14:02:06 | INFO     | Application started (automated test mode)
+2026-10-24 14:02:06 | INFO     | Equipment registered successfully: ID=104, name=Tablet
+2026-10-24 14:02:06 | DEBUG    | Current equipment state: {101: {'name': 'Laptop', 'available': True}, 102: {'name': 'Projector', 'available': True}, 103: {'name': 'Camera', 'available': True}, 104: {'name': 'Tablet', 'available': True}}
+2026-10-24 14:02:06 | INFO     | Equipment borrowed successfully: ID=101, name=Laptop
+2026-10-24 14:02:06 | DEBUG    | Current equipment state: {101: {'name': 'Laptop', 'available': False}, 102: {'name': 'Projector', 'available': True}, 103: {'name': 'Camera', 'available': True}, 104: {'name': 'Tablet', 'available': True}}
+2026-10-24 14:02:06 | INFO     | Equipment returned successfully: ID=101, name=Laptop
+2026-10-24 14:02:06 | DEBUG    | Current equipment state: {101: {'name': 'Laptop', 'available': True}, 102: {'name': 'Projector', 'available': True}, 103: {'name': 'Camera', 'available': True}, 104: {'name': 'Tablet', 'available': True}}
+2026-10-24 14:02:06 | INFO     | Equipment borrowed successfully: ID=104, name=Tablet
+2026-10-24 14:02:06 | DEBUG    | Current equipment state: {101: {'name': 'Laptop', 'available': True}, 102: {'name': 'Projector', 'available': True}, 103: {'name': 'Camera', 'available': True}, 104: {'name': 'Tablet', 'available': False}}
+2026-10-24 14:02:06 | INFO     | Equipment returned successfully: ID=104, name=Tablet
+2026-10-24 14:02:06 | DEBUG    | Current equipment state: {101: {'name': 'Laptop', 'available': True}, 102: {'name': 'Projector', 'available': True}, 103: {'name': 'Camera', 'available': True}, 104: {'name': 'Tablet', 'available': True}}
+2026-10-24 14:02:06 | INFO     | Equipment registered successfully: ID=105, name=Microphone
+2026-10-24 14:02:06 | DEBUG    | Current equipment state: {101: {'name': 'Laptop', 'available': True}, 102: {'name': 'Projector', 'available': True}, 103: {'name': 'Camera', 'available': True}, 104: {'name': 'Tablet', 'available': True}, 105: {'name': 'Microphone', 'available': True}}
+2026-10-24 14:02:06 | INFO     | Equipment borrowed successfully: ID=101, name=Laptop
+2026-10-24 14:02:06 | DEBUG    | Current equipment state: {101: {'name': 'Laptop', 'available': False}, 102: {'name': 'Projector', 'available': True}, 103: {'name': 'Camera', 'available': True}, 104: {'name': 'Tablet', 'available': True}, 105: {'name': 'Microphone', 'available': True}}
+2026-10-24 14:02:06 | WARNING  | Attempt to borrow unavailable equipment: ID=101, name=Laptop
+2026-10-24 14:02:06 | WARNING  | Attempt to return equipment that is not borrowed: ID=102, name=Projector
+2026-10-24 14:02:06 | WARNING  | Equipment ID does not exist: 999
+2026-10-24 14:02:06 | WARNING  | Invalid menu option: '9'
+2026-10-24 14:02:06 | WARNING  | Invalid equipment ID for borrowing: -5
+2026-10-24 14:02:06 | ERROR    | Unexpected failure while borrowing equipment ID=106
+Traceback (most recent call last):
+  File "/home/user/Documents/Pajton/logging/equipment_checkout.py", line 61, in borrow_equipment
+    if not item["available"]:
+           ~~~~^^^^^^^^^^^^^
+KeyError: 'available'
+2026-10-24 14:02:06 | INFO     | Application shut down (automated test mode)
