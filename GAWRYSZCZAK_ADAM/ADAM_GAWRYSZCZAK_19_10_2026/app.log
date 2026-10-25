@@ -1,0 +1,22 @@
+2026-10-25 19:25:01,104 [INFO] __main__: Application started
+2026-10-25 19:25:04,312 [INFO] __main__: Borrowed item ID 101 (Laptop)
+2026-10-25 19:25:04,312 [DEBUG] __main__: Internal state updated: {101: False, 102: True, 103: True}
+2026-10-25 19:25:08,519 [INFO] __main__: Borrowed item ID 102 (Projector)
+2026-10-25 19:25:08,519 [DEBUG] __main__: Internal state updated: {101: False, 102: False, 103: True}
+2026-10-25 19:25:12,140 [WARNING] __main__: Attempt to borrow unavailable item ID 101
+2026-10-25 19:25:16,805 [WARNING] __main__: Attempt to return item ID 103 which is not borrowed
+2026-10-25 19:25:20,441 [WARNING] __main__: Invalid ID: 999 does not exist
+2026-10-25 19:25:25,902 [INFO] __main__: Registered new equipment ID 104 (Microphone)
+2026-10-25 19:25:25,902 [DEBUG] __main__: Internal state updated: {101: False, 102: False, 103: True, 104: True}
+2026-10-25 19:25:29,610 [WARNING] __main__: Invalid ID: duplicate item ID 104
+2026-10-25 19:25:34,218 [INFO] __main__: Returned item ID 101 (Laptop)
+2026-10-25 19:25:34,218 [DEBUG] __main__: Internal state updated: {101: True, 102: False, 103: True, 104: True}
+2026-10-25 19:25:38,007 [WARNING] __main__: Invalid menu option selected: 8
+2026-10-25 19:25:42,753 [ERROR] __main__: Unexpected failure converting item ID: abc
+Traceback (most recent call last):
+  File "equipment_checkout.py", line 40, in borrow_item
+    item_id = int(raw_id)
+ValueError: invalid literal for int() with base 10: 'abc'
+2026-10-25 19:25:47,129 [INFO] __main__: Borrowed item ID 104 (Microphone)
+2026-10-25 19:25:47,129 [DEBUG] __main__: Internal state updated: {101: True, 102: False, 103: True, 104: False}
+2026-10-25 19:25:51,400 [INFO] __main__: Application shut down
