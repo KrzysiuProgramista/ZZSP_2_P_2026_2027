@@ -1,0 +1,32 @@
+2026-10-26 07:30:16,085 | INFO | Application started
+2026-10-26 07:30:16,086 | INFO | Loaded 3 default items
+2026-10-26 07:30:16,086 | DEBUG | State: 1=available, 2=available, 3=available
+2026-10-26 07:30:16,087 | INFO | Registered new equipment: id=4 name='Tripod'
+2026-10-26 07:30:16,087 | DEBUG | State: 1=available, 2=available, 3=available, 4=available
+2026-10-26 07:30:16,087 | INFO | Borrowed: id=1 name='Laptop' by Anna
+2026-10-26 07:30:16,087 | DEBUG | State: 1=borrowed, 2=available, 3=available, 4=available
+2026-10-26 07:30:16,087 | WARNING | Borrow refused: id=1 is held by Anna
+2026-10-26 07:30:16,087 | WARNING | Return refused: id=2 is not borrowed
+2026-10-26 07:30:16,087 | INFO | Returned: id=1 name='Laptop' by Anna
+2026-10-26 07:30:16,087 | DEBUG | State: 1=available, 2=available, 3=available, 4=available
+2026-10-26 07:30:16,087 | WARNING | Invalid ID: no equipment with id=99
+2026-10-26 07:30:16,087 | WARNING | Duplicate ID rejected: id=4 already exists
+2026-10-26 07:30:16,087 | WARNING | Invalid ID entered (must be a positive integer): 'abc'
+2026-10-26 07:30:16,087 | WARNING | Invalid menu option: '8'
+2026-10-26 07:30:16,088 | INFO | Application shut down
+2026-10-26 07:30:16,146 | INFO | Application started
+2026-10-26 07:30:16,146 | INFO | Loaded 3 default items
+2026-10-26 07:30:16,146 | DEBUG | State: 1=available, 2=available, 3=available
+2026-10-26 07:30:16,147 | ERROR | Unexpected failure while handling the request
+Traceback (most recent call last):
+  File "/mnt/user-data/outputs/SURNAME_NAME/19_10_2026/equipment_checkout.py", line 154, in main
+    running = handle(input("Choose an option: ").strip(), mgr)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/user-data/outputs/SURNAME_NAME/19_10_2026/equipment_checkout.py", line 119, in handle
+    mgr.borrow(item_id, student)
+  File "/mnt/user-data/outputs/SURNAME_NAME/19_10_2026/equipment_checkout.py", line 63, in borrow
+    self._maybe_fail("borrow")
+  File "/mnt/user-data/outputs/SURNAME_NAME/19_10_2026/equipment_checkout.py", line 48, in _maybe_fail
+    raise RuntimeError(f"Simulated failure during '{operation}'")
+RuntimeError: Simulated failure during 'borrow'
+2026-10-26 07:30:16,148 | INFO | Application shut down
