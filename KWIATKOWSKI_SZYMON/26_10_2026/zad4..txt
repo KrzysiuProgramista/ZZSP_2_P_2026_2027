@@ -1,0 +1,5 @@
+zad4.
+SYMPTOM: ZeroDivisionError
+CAUSE: When the list is empty ([]) len(scores) is 0 and python cannot divide by zero
+FIX: Add a check if the list is empty
+TESTS: 75.0

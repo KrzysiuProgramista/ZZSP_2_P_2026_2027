@@ -1,0 +1,5 @@
+zad7.
+SYMPTOM: missing items
+CAUSE: Modifying a list during a for loop skips items
+FIX: Use list comprehension
+TESTS: returns []

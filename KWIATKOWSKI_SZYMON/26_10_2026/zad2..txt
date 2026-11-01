@@ -1,0 +1,5 @@
+zad2.
+SYMPTOM: TypeError
+CAUTION: input() returns text (str), but we compare it with a number (int)
+FIX: Wrap input() in int()
+TESTS: Input 3 prints Reservation accepted input 0 prints Enter a positive number

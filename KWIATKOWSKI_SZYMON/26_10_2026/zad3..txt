@@ -1,0 +1,5 @@
+zad3.
+SYMPTOM: IndexError
+CAUSE: Python lists start at index 0 for 3 items len() is 3 but indices are 0, 1, 2
+FIX: Use index -1
+TESTS: 17

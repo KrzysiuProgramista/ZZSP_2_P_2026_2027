@@ -1,0 +1,5 @@
+zad1.
+SYMPTOM: SyntaxError
+CAUTION: Missing : at the end of the def line
+FIX: Add : after def greeting(name)
+TESTS: Outputs Hello, Maya!

@@ -1,0 +1,5 @@
+zad9.
+SYMPTOM: logic
+CAUSE: Operator precedence (and binds tighter than or), allowing wrong seat counts.
+FIX: Use parentheses to group conditions
+TESTS: False

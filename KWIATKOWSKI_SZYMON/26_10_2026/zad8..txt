@@ -1,0 +1,5 @@
+zad8.
+SYMPTOM: Wrong total
+CAUSE: Setting counts[word] = 1 resets the count instead of adding to it
+FIX: Use counts[word] = counts.get(word, 0) + 1
+TESTS: go 3 stop 1

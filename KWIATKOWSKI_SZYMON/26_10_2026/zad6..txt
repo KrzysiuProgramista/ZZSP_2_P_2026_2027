@@ -1,0 +1,5 @@
+zad6.
+SYMPTOM: shipping_cost(6) returns 8 instead of 12
+CAUSE: Independent if statements for 6 the first if sets cost to 12 but the next if weight > 1 is true so cost gets overwritten to 8
+FIX: Use elif
+TESTS: 12

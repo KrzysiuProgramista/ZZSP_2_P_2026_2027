@@ -1,0 +1,5 @@
+zad5.
+SYMPTOM: KeyError
+CAUSE: The dictionary is missing the "contact" key
+FIX: Check if keys exist before accessing tchem
+TESTS: not provided and Alex
