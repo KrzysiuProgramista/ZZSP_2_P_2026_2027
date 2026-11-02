@@ -1,0 +1,4 @@
+SYMPTOM: A non-student booking 5 seats age 25 returns True, violating the max 4 seats rule.
+CAUSE: Missing parentheses in operator precedence (and/or) allowed student age rules to bypass the seat limit rule.
+FIX: Enforced seat bounds (1 <= seats <= 4) across all cases and separated student and non-student age checks cleanly.
+TESTS: (25, 5, False) -> False, (15, 1, True) -> False, (16, 1, True) -> True, (20, 0, False) -> False, (20, 4, False) -> True.

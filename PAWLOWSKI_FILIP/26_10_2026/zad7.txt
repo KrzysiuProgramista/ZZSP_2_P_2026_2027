@@ -1,0 +1,4 @@
+SYMPTOM: One of the expired sessions remains in the returned list.
+CAUSE: Modifying (removing elements from) a list while iterating over it in a for loop causes skipped elements.
+FIX: Created a new list containing only non-expired sessions using list comprehension instead of modifying the original list in place.
+TESTS: Two adjacent expired sessions leaves only session 3. No expired sessions returns all, and all expired sessions returns [].

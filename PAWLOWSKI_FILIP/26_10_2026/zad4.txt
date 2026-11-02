@@ -1,0 +1,4 @@
+SYMPTOM: For an empty list [], the program crashes with ZeroDivisionError: division by zero.
+CAUSE: The program tries to divide sum(scores) by len(scores), which is 0 for an empty list.
+FIX: Added a check if not scores: return None before calculating the average.
+TESTS: average([70, 80]) returns 75.0, and average([]) returns None.

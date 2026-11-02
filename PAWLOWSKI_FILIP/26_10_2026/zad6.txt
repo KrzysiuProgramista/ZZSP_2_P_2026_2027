@@ -1,0 +1,4 @@
+SYMPTOM: A weight of 6 kg returns a shipping cost of 8 instead of 12.
+CAUSE: The second if condition (weight > 1) evaluates to True for 6 kg and overwrites the cost variable to 8.
+FIX: Changed the second if statement to an elif block and ordered the conditions correctly.
+TESTS: weight = 0.5 gives 5, weight = 2 gives 8, and weight = 6 gives 12.

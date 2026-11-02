@@ -1,0 +1,4 @@
+SYMPTOM: The program crashes with an IndexError: list index out of range.
+CAUSE: List indices in Python start at 0, so the last element is at index len(readings) - 1, not len(readings).
+FIX: Changed the index from len(readings) to len(readings) - 1 (or -1).
+TESTS: [12, 13, 17] returns 17, and a single-item list [42] returns 42.

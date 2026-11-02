@@ -1,0 +1,4 @@
+SYMPTOM: The word "go" has a count of 1 instead of 3, and punctuation like ! and ? are not stripped.
+CAUSE: The loop sets counts[word] = 1 every time instead of incrementing, and replace() only removed commas and periods.
+FIX: Cleaned punctuation properly and updated the dictionary count using counts[word] = counts.get(word, 0) + 1.
+TESTS: "Go, go. STOP go!" returns {"go": 3, "stop": 1}.

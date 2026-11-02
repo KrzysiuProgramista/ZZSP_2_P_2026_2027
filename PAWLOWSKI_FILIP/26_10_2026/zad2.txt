@@ -1,0 +1,4 @@
+SYMPTOM: The program crashes with a TypeError when the user enters the number of tickets.
+CAUSE: The input() function returns a string, which cannot be directly compared to the integer 0 using >.
+FIX: Converted the user input to an integer using int(input(...)).
+TESTS: Input 3 prints "Reservation accepted", and input 0 prints "Enter a positive number".

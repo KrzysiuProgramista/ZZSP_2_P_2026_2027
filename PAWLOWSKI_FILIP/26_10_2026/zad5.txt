@@ -1,0 +1,4 @@
+SYMPTOM: The first test case throws a KeyError: 'contact'.
+CAUSE: The program directly accesses person["contact"]["name"], but the key "contact" is missing in the first dictionary.
+FIX: Used safely nested checks or the .get() method to return "Not provided" when keys are missing.
+TESTS: {"name": "Sam"} returns "Not provided", {"contact": {"name": "Alex"}} returns "Alex", and {"contact": {}} returns "Not provided".

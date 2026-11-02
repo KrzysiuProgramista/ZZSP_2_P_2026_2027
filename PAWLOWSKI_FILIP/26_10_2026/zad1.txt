@@ -1,0 +1,4 @@
+SYMPTOM: The program throws a SyntaxError upon running.
+CAUSE: Missing colon at the end of the line defining the function def greeting(name).
+FIX: Added a colon after def greeting(name): and moved return to a new indented line.
+TESTS: greeting("Maya") returns "Hello, Maya!" and greeting("Jan") returns "Hello, Jan!".

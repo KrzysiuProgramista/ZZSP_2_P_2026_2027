@@ -1,0 +1,9 @@
+SYMPTOM: Invalid ticket types crash with KeyError, stock is overwritten with quantity instead of reduced, balance deduction is inverted, and failed attempts modify state.
+CAUSE: Missing validation for ticket key, wrong stock update (ticket["stock"] = quantity), and wrong balance calculation (total - balance).
+FIX: Added validation if ticket_type not in tickets, fixed stock reduction ticket["stock"] -= quantity, and corrected balance deduction balance - total.
+TESTS:
+1. standard, qty 3, balance 100 -> ok: True, total 60, balance 40, stock 5
+2. standard, qty 5, balance 200 -> ok: True, total 90, balance 110, stock 3
+3. vip, qty 2, balance 50 -> ok: False (insufficient funds), stock & balance unchanged
+4. gold -> ok: False (unknown ticket), no crash
+5. qty 0 -> ok: False, no state change.
