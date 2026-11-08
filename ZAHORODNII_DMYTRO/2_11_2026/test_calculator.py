@@ -1,9 +1,22 @@
-
 import unittest
 from calculator import add, subtract, multiply, divide
 
 
 class TestCalculator(unittest.TestCase):
+   
+    def test_assert_raises(self):
+        with self.assertRaises(ValueError):
+            divide(1, 0)
+
+    def test_assert_raises_message(self):
+        with self.assertRaises(ValueError) as ctx:
+            divide(1, 0)
+
+        self.assertIn("zero", str(ctx.exception))
+
+    def test_non_numeric_input(self):
+        with self.assertRaises(TypeError):
+            add("hello", 5)
 
     def test_add_two_positives(self):
         self.assertEqual(add(2, 3), 5)
