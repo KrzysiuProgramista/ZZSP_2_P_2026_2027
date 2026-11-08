@@ -1,8 +1,8 @@
 {
-  "generated": "bb41f0916e34349a86f94c8e2f1644a02a50d578",
+  "generated": "1b90ee6418331946df0a9cb0ae7c5be050684e2b",
   "minChars": 100,
   "threshold": 0.6,
-  "fileCount": 30,
+  "fileCount": 34,
   "pupilCount": 9,
   "skipped": [
     {
@@ -258,6 +258,20 @@
     },
     {
       "pupils": [
+        "KISIEL_FILIP",
+        "PAWLOWSKI_FILIP"
+      ],
+      "paths": [
+        "KISIEL_FILIP/02_11_2026/test_calculator.py",
+        "PAWLOWSKI_FILIP/2_11_2026/test_calculator.py"
+      ],
+      "jaccard": 0.1837,
+      "text": 0.7125,
+      "struct": 0.5785,
+      "chars": 1022
+    },
+    {
+      "pupils": [
         "PAWLOWSKI_FILIP",
         "STACHURSKI_FABIAN"
       ],
@@ -325,20 +339,6 @@
       "text": 0.4737,
       "struct": null,
       "chars": 961
-    },
-    {
-      "pupils": [
-        "GAWRYSZCZAK_ADAM",
-        "KISIEL_FILIP"
-      ],
-      "paths": [
-        "GAWRYSZCZAK_ADAM/07_09_2026/tasks.py",
-        "KISIEL_FILIP/07_09_2026/task.py"
-      ],
-      "jaccard": 0.1524,
-      "text": 0.6232,
-      "struct": null,
-      "chars": 1232
     }
   ]
 }
