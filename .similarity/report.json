@@ -1,10 +1,20 @@
 {
-  "generated": "b180302dcdc1be15a48a472cf2cc0034af274c61",
+  "generated": "dda4d22688e97d859bf015401aa64819763626d5",
   "minChars": 100,
   "threshold": 0.6,
-  "fileCount": 48,
+  "fileCount": 62,
   "pupilCount": 9,
   "skipped": [
+    {
+      "path": "BOBROWSKI_ALAN/26_10_2026/1.py",
+      "pupil": "BOBROWSKI_ALAN",
+      "chars": 81
+    },
+    {
+      "path": "BOBROWSKI_ALAN/26_10_2026/2.py",
+      "pupil": "BOBROWSKI_ALAN",
+      "chars": 83
+    },
     {
       "path": "BOBROWSKI_ALAN/28_09_2026/bug_b_solution.py",
       "pupil": "BOBROWSKI_ALAN",
@@ -244,6 +254,20 @@
     },
     {
       "pupils": [
+        "BOBROWSKI_ALAN",
+        "KWIATKOWSKI_SZYMON"
+      ],
+      "paths": [
+        "BOBROWSKI_ALAN/02_11_2026/calculator.py",
+        "KWIATKOWSKI_SZYMON/02_11_2026/calculator.py"
+      ],
+      "jaccard": 0.4695,
+      "text": 0.7002,
+      "struct": 0.7683,
+      "chars": 181
+    },
+    {
+      "pupils": [
         "ROZYCKI_NATAN",
         "ZAHORODNII_DMYTRO"
       ],
@@ -325,20 +349,6 @@
       "text": 0.8131,
       "struct": 0.8256,
       "chars": 944
-    },
-    {
-      "pupils": [
-        "KWIATKOWSKI_SZYMON",
-        "ZAHORODNII_DMYTRO"
-      ],
-      "paths": [
-        "KWIATKOWSKI_SZYMON/02_11_2026/test_text_tool.py",
-        "ZAHORODNII_DMYTRO/2_11_2026/test_text_tools.py"
-      ],
-      "jaccard": 0.4231,
-      "text": 0.9518,
-      "struct": 0.9949,
-      "chars": 943
     }
   ]
 }
