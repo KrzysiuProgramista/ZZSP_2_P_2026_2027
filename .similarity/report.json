@@ -1,8 +1,8 @@
 {
-  "generated": "3f68fa6f526ba19257a40ade305786f7d9125e4b",
+  "generated": "b180302dcdc1be15a48a472cf2cc0034af274c61",
   "minChars": 100,
   "threshold": 0.6,
-  "fileCount": 44,
+  "fileCount": 48,
   "pupilCount": 9,
   "skipped": [
     {
@@ -202,6 +202,20 @@
   "notices": [
     {
       "pupils": [
+        "PAWLOWSKI_FILIP",
+        "ROZYCKI_NATAN"
+      ],
+      "paths": [
+        "PAWLOWSKI_FILIP/2_11_2026/test_calculator.py",
+        "ROZYCKI_NATAN/02_11_2026/test_calculator.py"
+      ],
+      "jaccard": 0.5562,
+      "text": 0.8838,
+      "struct": 0.9126,
+      "chars": 1270
+    },
+    {
+      "pupils": [
         "KISIEL_FILIP",
         "KWIATKOWSKI_SZYMON"
       ],
@@ -213,6 +227,34 @@
       "text": 0.8161,
       "struct": 0.8214,
       "chars": 943
+    },
+    {
+      "pupils": [
+        "KWIATKOWSKI_SZYMON",
+        "ROZYCKI_NATAN"
+      ],
+      "paths": [
+        "KWIATKOWSKI_SZYMON/02_11_2026/test_updated_calculator.py",
+        "ROZYCKI_NATAN/02_11_2026/test_calculator.py"
+      ],
+      "jaccard": 0.4966,
+      "text": 0.915,
+      "struct": 0.943,
+      "chars": 1130
+    },
+    {
+      "pupils": [
+        "ROZYCKI_NATAN",
+        "ZAHORODNII_DMYTRO"
+      ],
+      "paths": [
+        "ROZYCKI_NATAN/02_11_2026/test_calculator.py",
+        "ZAHORODNII_DMYTRO/2_11_2026/test_calculator.py"
+      ],
+      "jaccard": 0.4612,
+      "text": 0.6832,
+      "struct": 0.5266,
+      "chars": 1192
     },
     {
       "pupils": [
@@ -297,48 +339,6 @@
       "text": 0.9518,
       "struct": 0.9949,
       "chars": 943
-    },
-    {
-      "pupils": [
-        "KWIATKOWSKI_SZYMON",
-        "PAWLOWSKI_FILIP"
-      ],
-      "paths": [
-        "KWIATKOWSKI_SZYMON/02_11_2026/test_calculator.py",
-        "PAWLOWSKI_FILIP/2_11_2026/test_calculator.py"
-      ],
-      "jaccard": 0.392,
-      "text": 0.7057,
-      "struct": 0.7312,
-      "chars": 871
-    },
-    {
-      "pupils": [
-        "KWIATKOWSKI_SZYMON",
-        "ZAHORODNII_DMYTRO"
-      ],
-      "paths": [
-        "KWIATKOWSKI_SZYMON/02_11_2026/test_updated_calculator.py",
-        "ZAHORODNII_DMYTRO/2_11_2026/test_calculator.py"
-      ],
-      "jaccard": 0.3868,
-      "text": 0.708,
-      "struct": 0.5531,
-      "chars": 1130
-    },
-    {
-      "pupils": [
-        "PAWLOWSKI_FILIP",
-        "ZAHORODNII_DMYTRO"
-      ],
-      "paths": [
-        "PAWLOWSKI_FILIP/2_11_2026/test_calculator.py",
-        "ZAHORODNII_DMYTRO/2_11_2026/test_calculator.py"
-      ],
-      "jaccard": 0.3798,
-      "text": 0.613,
-      "struct": 0.6776,
-      "chars": 1192
     }
   ]
 }
