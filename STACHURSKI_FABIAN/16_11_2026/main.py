@@ -62,5 +62,75 @@ class TestBankAccount(unittest.TestCase):
             self.account.deposit(-10)
 
 
+# task 2
+class TestBankAccount(unittest.TestCase):
+
+    def setUp(self):
+        self.account = BankAccount("Alice", 100)
+
+    def test_1_deposit(self):
+        self.account.deposit(1000)
+        self.assertEqual(self.account.balance, 1100)
+
+    def test_2_balance(self):
+        self.assertEqual(self.account.balance, 100)
+
+
+class TestBankAccount(unittest.TestCase):
+
+    @classmethod
+    def setUpClass(cls):
+        cls.account = BankAccount("Alice", 100)
+
+    def test_1_deposit(self):
+        self.account.deposit(1000)
+        self.assertEqual(self.account.balance, 1100)
+
+    def test_2_balance(self):
+        self.assertEqual(self.account.balance, 100)
+
+
+#task 3
+class FileStore:
+
+    def __init__(self, filename):
+        self.filename = filename
+
+    def save(self, data):
+        with open(self.filename, "w") as f:
+            json.dump(data, f)
+
+    def load(self):
+        with open(self.filename, "r") as f:
+            return json.load(f)
+
+
+class TestFileStore(unittest.TestCase):
+    def setUp(self):
+        self.filename = "test.json"
+        self.store = FileStore(self.filename)
+
+    def tearDown(self):
+        if os.path.exists(self.filename):
+            os.remove(self.filename)
+
+    def test_save_and_load(self):
+        self.store.save({"a": 1})
+        self.assertEqual(self.store.load(), {"a": 1})
+
+    def test_load_missing(self):
+        with self.assertRaises(FileNotFoundError):
+            self.store.load()
+
+    def test_save_empty(self):
+        self.store.save({})
+        self.assertEqual(self.store.load(), {})
+
+    def test_overwrite(self):
+        self.store.save({"a": 1})
+        self.store.save({"b": 2})
+        self.assertEqual(self.store.load(), {"b": 2})
+
+
 if __name__ == "__main__":
     unittest.main()
