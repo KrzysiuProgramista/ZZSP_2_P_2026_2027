@@ -1,8 +1,8 @@
 {
-  "generated": "8142c152a20795ec6859fc6fa8605a45835be2df",
+  "generated": "d443a4cb196e47674010aa7459fa894bc80fef62",
   "minChars": 100,
   "threshold": 0.6,
-  "fileCount": 73,
+  "fileCount": 83,
   "pupilCount": 9,
   "skipped": [
     {
@@ -93,6 +93,25 @@
       "text": 0.9997,
       "struct": 0.9995,
       "chars": 6539
+    },
+    {
+      "sameCommit": false,
+      "later": {
+        "pupil": "GAWRYSZCZAK_ADAM",
+        "path": "GAWRYSZCZAK_ADAM/16.11.2026/bank_account.py",
+        "assignment": "16.11.2026",
+        "added": "2026-11-16T19:42:04+01:00"
+      },
+      "earlier": {
+        "pupil": "ZAHORODNII_DMYTRO",
+        "path": "ZAHORODNII_DMYTRO/16_11_2026/bank_account.py",
+        "assignment": "16_11_2026",
+        "added": "2026-11-16T17:01:50+01:00"
+      },
+      "jaccard": 0.791,
+      "text": 0.9906,
+      "struct": 0.982,
+      "chars": 843
     },
     {
       "sameCommit": false,
@@ -212,6 +231,34 @@
   "notices": [
     {
       "pupils": [
+        "GAWRYSZCZAK_ADAM",
+        "KISIEL_FILIP"
+      ],
+      "paths": [
+        "GAWRYSZCZAK_ADAM/2_11_2026/test_text_tools.py",
+        "KISIEL_FILIP/02_11_2026/test_text_tools.py"
+      ],
+      "jaccard": 0.5846,
+      "text": 0.8551,
+      "struct": 0.8722,
+      "chars": 1074
+    },
+    {
+      "pupils": [
+        "GAWRYSZCZAK_ADAM",
+        "ZAHORODNII_DMYTRO"
+      ],
+      "paths": [
+        "GAWRYSZCZAK_ADAM/2_11_2026/test_text_tools.py",
+        "ZAHORODNII_DMYTRO/02_11_2026/test_text_tools.py"
+      ],
+      "jaccard": 0.5611,
+      "text": 0.9306,
+      "struct": 0.9524,
+      "chars": 944
+    },
+    {
+      "pupils": [
         "PAWLOWSKI_FILIP",
         "ROZYCKI_NATAN"
       ],
@@ -237,6 +284,20 @@
       "text": 0.8161,
       "struct": 0.8214,
       "chars": 943
+    },
+    {
+      "pupils": [
+        "GAWRYSZCZAK_ADAM",
+        "KWIATKOWSKI_SZYMON"
+      ],
+      "paths": [
+        "GAWRYSZCZAK_ADAM/2_11_2026/calculator.py",
+        "KWIATKOWSKI_SZYMON/02_11_2026/calculator.py"
+      ],
+      "jaccard": 0.5025,
+      "text": 0.7298,
+      "struct": 0.7896,
+      "chars": 181
     },
     {
       "pupils": [
@@ -282,6 +343,20 @@
     },
     {
       "pupils": [
+        "GAWRYSZCZAK_ADAM",
+        "KWIATKOWSKI_SZYMON"
+      ],
+      "paths": [
+        "GAWRYSZCZAK_ADAM/2_11_2026/test_calculator.py",
+        "KWIATKOWSKI_SZYMON/02_11_2026/test_updated_calculator.py"
+      ],
+      "jaccard": 0.4514,
+      "text": 0.8802,
+      "struct": 0.917,
+      "chars": 1130
+    },
+    {
+      "pupils": [
         "KWIATKOWSKI_SZYMON",
         "PAWLOWSKI_FILIP"
       ],
@@ -293,62 +368,6 @@
       "text": 0.683,
       "struct": 0.7547,
       "chars": 181
-    },
-    {
-      "pupils": [
-        "BOBROWSKI_ALAN",
-        "KISIEL_FILIP"
-      ],
-      "paths": [
-        "BOBROWSKI_ALAN/07_09_2026/tasks.py",
-        "KISIEL_FILIP/07_09_2026/task.py"
-      ],
-      "jaccard": 0.4495,
-      "text": 0.8705,
-      "struct": 0.7297,
-      "chars": 2186
-    },
-    {
-      "pupils": [
-        "BOBROWSKI_ALAN",
-        "PAWLOWICZ_WOJCIECH"
-      ],
-      "paths": [
-        "BOBROWSKI_ALAN/07_09_2026/tasks.py",
-        "PAWLOWICZ_WOJCIECH/07_09_2026/tasks.py"
-      ],
-      "jaccard": 0.4495,
-      "text": 0.8705,
-      "struct": 0.7297,
-      "chars": 2186
-    },
-    {
-      "pupils": [
-        "KWIATKOWSKI_SZYMON",
-        "PAWLOWSKI_FILIP"
-      ],
-      "paths": [
-        "KWIATKOWSKI_SZYMON/02_11_2026/test_updated_calculator.py",
-        "PAWLOWSKI_FILIP/02_11_2026/test_calculator.py"
-      ],
-      "jaccard": 0.4491,
-      "text": 0.8218,
-      "struct": 0.8598,
-      "chars": 1130
-    },
-    {
-      "pupils": [
-        "KISIEL_FILIP",
-        "ZAHORODNII_DMYTRO"
-      ],
-      "paths": [
-        "KISIEL_FILIP/02_11_2026/test_text_tools.py",
-        "ZAHORODNII_DMYTRO/02_11_2026/test_text_tools.py"
-      ],
-      "jaccard": 0.4257,
-      "text": 0.8131,
-      "struct": 0.8256,
-      "chars": 944
     }
   ]
 }
