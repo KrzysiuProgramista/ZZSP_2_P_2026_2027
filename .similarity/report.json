@@ -1,8 +1,8 @@
 {
-  "generated": "d443a4cb196e47674010aa7459fa894bc80fef62",
+  "generated": "788826fc4e79364301b54d2c673336663a4dab3d",
   "minChars": 100,
   "threshold": 0.6,
-  "fileCount": 83,
+  "fileCount": 91,
   "pupilCount": 9,
   "skipped": [
     {
@@ -112,6 +112,44 @@
       "text": 0.9906,
       "struct": 0.982,
       "chars": 843
+    },
+    {
+      "sameCommit": false,
+      "later": {
+        "pupil": "STACHURSKI_FABIAN",
+        "path": "STACHURSKI_FABIAN/2_11_2026/test-text-tools.py",
+        "assignment": "2_11_2026",
+        "added": "2026-11-21T11:33:52+01:00"
+      },
+      "earlier": {
+        "pupil": "GAWRYSZCZAK_ADAM",
+        "path": "GAWRYSZCZAK_ADAM/2_11_2026/test_text_tools.py",
+        "assignment": "2_11_2026",
+        "added": "2026-11-16T19:34:56+01:00"
+      },
+      "jaccard": 0.6072,
+      "text": 0.9374,
+      "struct": 0.9524,
+      "chars": 972
+    },
+    {
+      "sameCommit": false,
+      "later": {
+        "pupil": "STACHURSKI_FABIAN",
+        "path": "STACHURSKI_FABIAN/2_11_2026/test-text-tools.py",
+        "assignment": "2_11_2026",
+        "added": "2026-11-21T11:33:52+01:00"
+      },
+      "earlier": {
+        "pupil": "ZAHORODNII_DMYTRO",
+        "path": "ZAHORODNII_DMYTRO/02_11_2026/test_text_tools.py",
+        "assignment": "02_11_2026",
+        "added": "2026-11-16T16:18:20+01:00"
+      },
+      "jaccard": 0.6058,
+      "text": 0.9833,
+      "struct": 1.0,
+      "chars": 944
     },
     {
       "sameCommit": false,
@@ -260,6 +298,20 @@
     {
       "pupils": [
         "PAWLOWSKI_FILIP",
+        "STACHURSKI_FABIAN"
+      ],
+      "paths": [
+        "PAWLOWSKI_FILIP/02_11_2026/calculator.py",
+        "STACHURSKI_FABIAN/2_11_2026/calculator.py"
+      ],
+      "jaccard": 0.5609,
+      "text": 0.6408,
+      "struct": 0.3993,
+      "chars": 349
+    },
+    {
+      "pupils": [
+        "PAWLOWSKI_FILIP",
         "ROZYCKI_NATAN"
       ],
       "paths": [
@@ -283,6 +335,34 @@
       "jaccard": 0.5516,
       "text": 0.8161,
       "struct": 0.8214,
+      "chars": 943
+    },
+    {
+      "pupils": [
+        "GAWRYSZCZAK_ADAM",
+        "STACHURSKI_FABIAN"
+      ],
+      "paths": [
+        "GAWRYSZCZAK_ADAM/2_11_2026/test_calculator.py",
+        "STACHURSKI_FABIAN/2_11_2026/test-calculator.py"
+      ],
+      "jaccard": 0.5168,
+      "text": 0.8937,
+      "struct": 0.9146,
+      "chars": 1162
+    },
+    {
+      "pupils": [
+        "KWIATKOWSKI_SZYMON",
+        "STACHURSKI_FABIAN"
+      ],
+      "paths": [
+        "KWIATKOWSKI_SZYMON/02_11_2026/test_text_tool.py",
+        "STACHURSKI_FABIAN/2_11_2026/test-text-tools.py"
+      ],
+      "jaccard": 0.5066,
+      "text": 0.9493,
+      "struct": 0.9949,
       "chars": 943
     },
     {
@@ -315,59 +395,17 @@
     },
     {
       "pupils": [
-        "BOBROWSKI_ALAN",
-        "KWIATKOWSKI_SZYMON"
+        "KISIEL_FILIP",
+        "STACHURSKI_FABIAN"
       ],
       "paths": [
-        "BOBROWSKI_ALAN/02_11_2026/calculator.py",
-        "KWIATKOWSKI_SZYMON/02_11_2026/calculator.py"
+        "KISIEL_FILIP/02_11_2026/test_text_tools.py",
+        "STACHURSKI_FABIAN/2_11_2026/test-text-tools.py"
       ],
-      "jaccard": 0.4695,
-      "text": 0.7002,
-      "struct": 0.7683,
-      "chars": 181
-    },
-    {
-      "pupils": [
-        "ROZYCKI_NATAN",
-        "ZAHORODNII_DMYTRO"
-      ],
-      "paths": [
-        "ROZYCKI_NATAN/02_11_2026/test_calculator.py",
-        "ZAHORODNII_DMYTRO/02_11_2026/test_calculator.py"
-      ],
-      "jaccard": 0.4612,
-      "text": 0.6832,
-      "struct": 0.5266,
-      "chars": 1192
-    },
-    {
-      "pupils": [
-        "GAWRYSZCZAK_ADAM",
-        "KWIATKOWSKI_SZYMON"
-      ],
-      "paths": [
-        "GAWRYSZCZAK_ADAM/2_11_2026/test_calculator.py",
-        "KWIATKOWSKI_SZYMON/02_11_2026/test_updated_calculator.py"
-      ],
-      "jaccard": 0.4514,
-      "text": 0.8802,
-      "struct": 0.917,
-      "chars": 1130
-    },
-    {
-      "pupils": [
-        "KWIATKOWSKI_SZYMON",
-        "PAWLOWSKI_FILIP"
-      ],
-      "paths": [
-        "KWIATKOWSKI_SZYMON/02_11_2026/calculator.py",
-        "PAWLOWSKI_FILIP/02_11_2026/calculator.py"
-      ],
-      "jaccard": 0.4505,
-      "text": 0.683,
-      "struct": 0.7547,
-      "chars": 181
+      "jaccard": 0.4965,
+      "text": 0.8128,
+      "struct": 0.8256,
+      "chars": 972
     }
   ]
 }
