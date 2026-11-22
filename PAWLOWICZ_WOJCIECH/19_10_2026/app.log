@@ -1,0 +1,26 @@
+2026-11-22 10:46:45,562 [INFO] Registered new equipment: id=L1 name=Laptop - Dell XPS
+2026-11-22 10:46:45,562 [DEBUG] Current state: [('L1', True)]
+2026-11-22 10:46:45,562 [INFO] Registered new equipment: id=L2 name=Laptop - MacBook Air
+2026-11-22 10:46:45,562 [DEBUG] Current state: [('L1', True), ('L2', True)]
+2026-11-22 10:46:45,562 [INFO] Registered new equipment: id=P1 name=Projector - Epson
+2026-11-22 10:46:45,562 [DEBUG] Current state: [('L1', True), ('L2', True), ('P1', True)]
+2026-11-22 10:46:45,562 [INFO] Registered new equipment: id=C1 name=Camera - Canon EOS
+2026-11-22 10:46:45,562 [DEBUG] Current state: [('L1', True), ('L2', True), ('P1', True), ('C1', True)]
+2026-11-22 10:46:45,562 [INFO] Application starting up.
+2026-11-22 10:46:45,562 [INFO] Borrowed: id=L1 name=Laptop - Dell XPS
+2026-11-22 10:46:45,562 [DEBUG] Current state: [('L1', False), ('L2', True), ('P1', True), ('C1', True)]
+2026-11-22 10:46:45,562 [WARNING] Attempt to borrow unavailable item id=L1 name=Laptop - Dell XPS
+2026-11-22 10:46:45,562 [INFO] Returned: id=L1 name=Laptop - Dell XPS
+2026-11-22 10:46:45,562 [DEBUG] Current state: [('L1', True), ('L2', True), ('P1', True), ('C1', True)]
+2026-11-22 10:46:45,562 [WARNING] Attempt to return item that isn't borrowed id=P1 name=Projector - Epson
+2026-11-22 10:46:45,562 [WARNING] Invalid/unknown equipment id requested: 'ZZZ'
+2026-11-22 10:46:45,562 [INFO] Registered new equipment: id=C2 name=Camera - Sony A7
+2026-11-22 10:46:45,562 [DEBUG] Current state: [('L1', True), ('L2', True), ('P1', True), ('C1', True), ('C2', True)]
+2026-11-22 10:46:45,562 [WARNING] Invalid menu option entered: '9'
+2026-11-22 10:46:45,562 [INFO] Application shutting down.
+2026-11-22 10:46:45,562 [ERROR] Unexpected error encountered during a forced test
+Traceback (most recent call last):
+  File "/tmp/claude-0/-home-claude/ea3d89d2-7d32-5658-9cf1-d496c4f433eb/scratchpad/work/Pawlowicz_Imie/19_10_2026/equipment_checkout.py", line 203, in _force_unexpected_error
+    _ = broken_item["available"]
+        ~~~~~~~~~~~^^^^^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable

@@ -1,0 +1,8 @@
+2026-11-22 10:46:06,118 [INFO] SUCCESS deposit: account=A100 amount=50 balance=150
+2026-11-22 10:46:06,118 [INFO] SUCCESS withdrawal: account=A100 amount=30 balance=120
+2026-11-22 10:46:06,118 [WARNING] FAILED withdrawal: account=A200 amount=1000 balance=50 reason=insufficient-funds
+2026-11-22 10:46:06,118 [WARNING] FAILED withdrawal: account=A200 amount=1000 balance=50 reason=insufficient-funds
+2026-11-22 10:46:06,119 [WARNING] FAILED deposit: account=A100 amount=-5 balance=120 reason=non-positive-amount
+2026-11-22 10:46:06,119 [INFO] SUCCESS deposit: account=A200 amount=20 balance=70
+2026-11-22 10:46:06,119 [WARNING] FAILED withdrawal: account=A100 amount=1000 balance=120 reason=insufficient-funds
+2026-11-22 10:46:06,119 [INFO] SUCCESS withdrawal: account=A200 amount=10 balance=60
