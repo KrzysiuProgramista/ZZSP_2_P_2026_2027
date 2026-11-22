@@ -1,8 +1,8 @@
 {
-  "generated": "c03651c17db8af41ab02ba60a98823138e92deba",
+  "generated": "7b2019d5c13ac5f081d83a7d8c7546270e0e0c99",
   "minChars": 100,
   "threshold": 0.6,
-  "fileCount": 111,
+  "fileCount": 126,
   "pupilCount": 9,
   "skipped": [
     {
@@ -34,9 +34,52 @@
       "path": "KWIATKOWSKI_SZYMON/07_09_2026/zad.py",
       "pupil": "KWIATKOWSKI_SZYMON",
       "chars": 0
+    },
+    {
+      "path": "PAWLOWSKI_FILIP/16_11_2026/number_utils.py",
+      "pupil": "PAWLOWSKI_FILIP",
+      "chars": 61
     }
   ],
   "flagged": [
+    {
+      "sameCommit": false,
+      "later": {
+        "pupil": "BOBROWSKI_ALAN",
+        "path": "BOBROWSKI_ALAN/16_11_2026/bank_account.py",
+        "assignment": "16_11_2026",
+        "added": "2026-11-22T22:11:07+01:00"
+      },
+      "earlier": {
+        "pupil": "PAWLOWICZ_WOJCIECH",
+        "path": "PAWLOWICZ_WOJCIECH/16_11_2026/bank_account.py",
+        "assignment": "16_11_2026",
+        "added": "2026-11-22T12:20:53+01:00"
+      },
+      "jaccard": 1.0,
+      "text": 1.0,
+      "struct": 1.0,
+      "chars": 859
+    },
+    {
+      "sameCommit": false,
+      "later": {
+        "pupil": "BOBROWSKI_ALAN",
+        "path": "BOBROWSKI_ALAN/16_11_2026/bank_account.py",
+        "assignment": "16_11_2026",
+        "added": "2026-11-22T22:11:07+01:00"
+      },
+      "earlier": {
+        "pupil": "ZAHORODNII_DMYTRO",
+        "path": "ZAHORODNII_DMYTRO/16_11_2026/bank_account.py",
+        "assignment": "16_11_2026",
+        "added": "2026-11-16T17:01:50+01:00"
+      },
+      "jaccard": 1.0,
+      "text": 1.0,
+      "struct": 1.0,
+      "chars": 859
+    },
     {
       "sameCommit": false,
       "later": {
@@ -150,6 +193,25 @@
       "text": 0.9936,
       "struct": 0.9937,
       "chars": 6539
+    },
+    {
+      "sameCommit": false,
+      "later": {
+        "pupil": "BOBROWSKI_ALAN",
+        "path": "BOBROWSKI_ALAN/16_11_2026/bank_account.py",
+        "assignment": "16_11_2026",
+        "added": "2026-11-22T22:11:07+01:00"
+      },
+      "earlier": {
+        "pupil": "GAWRYSZCZAK_ADAM",
+        "path": "GAWRYSZCZAK_ADAM/16.11.2026/bank_account.py",
+        "assignment": "16.11.2026",
+        "added": "2026-11-16T19:42:04+01:00"
+      },
+      "jaccard": 0.791,
+      "text": 0.9906,
+      "struct": 0.982,
+      "chars": 843
     },
     {
       "sameCommit": false,
@@ -383,6 +445,20 @@
   "notices": [
     {
       "pupils": [
+        "BOBROWSKI_ALAN",
+        "PAWLOWICZ_WOJCIECH"
+      ],
+      "paths": [
+        "BOBROWSKI_ALAN/16_11_2026/library_catalog.py",
+        "PAWLOWICZ_WOJCIECH/16_11_2026/library_catalog.py"
+      ],
+      "jaccard": 0.5909,
+      "text": 0.9069,
+      "struct": 0.7963,
+      "chars": 1425
+    },
+    {
+      "pupils": [
         "GAWRYSZCZAK_ADAM",
         "KISIEL_FILIP"
       ],
@@ -506,20 +582,6 @@
       "text": 0.9493,
       "struct": 0.9949,
       "chars": 943
-    },
-    {
-      "pupils": [
-        "GAWRYSZCZAK_ADAM",
-        "KWIATKOWSKI_SZYMON"
-      ],
-      "paths": [
-        "GAWRYSZCZAK_ADAM/2_11_2026/calculator.py",
-        "KWIATKOWSKI_SZYMON/02_11_2026/calculator.py"
-      ],
-      "jaccard": 0.5025,
-      "text": 0.7298,
-      "struct": 0.7896,
-      "chars": 181
     }
   ]
 }
