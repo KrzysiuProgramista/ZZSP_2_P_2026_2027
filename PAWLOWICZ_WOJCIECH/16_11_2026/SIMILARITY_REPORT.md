@@ -4,11 +4,12 @@ This file was written automatically by the `similarity` GitHub Action.
 It is **not** a decision or an accusation - it flags work for your
 teacher to look at, and your teacher decides what it means.
 
-Pupil folder: `KISIEL_FILIP`
+Pupil folder: `PAWLOWICZ_WOJCIECH`
 
 | your file | similarity | length |
 |---|---|---|
-| `KISIEL_FILIP/07_09_2026/task.py` | **100%** | 2186 chars |
+| `PAWLOWICZ_WOJCIECH/16_11_2026/bank_account.py` | **100%** | 859 chars |
+| `PAWLOWICZ_WOJCIECH/16_11_2026/bank_account.py` | **79%** | 859 chars |
 
 Flagged because the overlap is at or above 60% on a substantial amount of code.
 

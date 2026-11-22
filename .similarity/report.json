@@ -1,8 +1,8 @@
 {
-  "generated": "788826fc4e79364301b54d2c673336663a4dab3d",
+  "generated": "c03651c17db8af41ab02ba60a98823138e92deba",
   "minChars": 100,
   "threshold": 0.6,
-  "fileCount": 91,
+  "fileCount": 111,
   "pupilCount": 9,
   "skipped": [
     {
@@ -40,21 +40,21 @@
     {
       "sameCommit": false,
       "later": {
-        "pupil": "KISIEL_FILIP",
-        "path": "KISIEL_FILIP/07_09_2026/task.py",
-        "assignment": "07_09_2026",
-        "added": "2026-10-18T23:52:27+02:00"
+        "pupil": "PAWLOWICZ_WOJCIECH",
+        "path": "PAWLOWICZ_WOJCIECH/16_11_2026/bank_account.py",
+        "assignment": "16_11_2026",
+        "added": "2026-11-22T12:20:53+01:00"
       },
       "earlier": {
-        "pupil": "PAWLOWICZ_WOJCIECH",
-        "path": "PAWLOWICZ_WOJCIECH/07_09_2026/tasks.py",
-        "assignment": "07_09_2026",
-        "added": "2026-09-07T16:32:12+02:00"
+        "pupil": "ZAHORODNII_DMYTRO",
+        "path": "ZAHORODNII_DMYTRO/16_11_2026/bank_account.py",
+        "assignment": "16_11_2026",
+        "added": "2026-11-16T17:01:50+01:00"
       },
       "jaccard": 1.0,
       "text": 1.0,
       "struct": 1.0,
-      "chars": 2186
+      "chars": 859
     },
     {
       "sameCommit": false,
@@ -97,6 +97,82 @@
     {
       "sameCommit": false,
       "later": {
+        "pupil": "PAWLOWICZ_WOJCIECH",
+        "path": "PAWLOWICZ_WOJCIECH/26_10_2026/debugging_lab.py",
+        "assignment": "26_10_2026",
+        "added": "2026-11-22T12:20:53+01:00"
+      },
+      "earlier": {
+        "pupil": "BOBROWSKI_ALAN",
+        "path": "BOBROWSKI_ALAN/06_10_2026/debugging_lab.py",
+        "assignment": "06_10_2026",
+        "added": "2026-10-04T20:12:31+02:00"
+      },
+      "jaccard": 0.9207,
+      "text": 0.9939,
+      "struct": 0.9942,
+      "chars": 6543
+    },
+    {
+      "sameCommit": false,
+      "later": {
+        "pupil": "PAWLOWICZ_WOJCIECH",
+        "path": "PAWLOWICZ_WOJCIECH/26_10_2026/debugging_lab.py",
+        "assignment": "26_10_2026",
+        "added": "2026-11-22T12:20:53+01:00"
+      },
+      "earlier": {
+        "pupil": "BOBROWSKI_ALAN",
+        "path": "BOBROWSKI_ALAN/12_10_2026/debugging_lab.py",
+        "assignment": "12_10_2026",
+        "added": "2026-10-17T19:30:56+02:00"
+      },
+      "jaccard": 0.9207,
+      "text": 0.9939,
+      "struct": 0.9942,
+      "chars": 6543
+    },
+    {
+      "sameCommit": false,
+      "later": {
+        "pupil": "PAWLOWICZ_WOJCIECH",
+        "path": "PAWLOWICZ_WOJCIECH/26_10_2026/debugging_lab.py",
+        "assignment": "26_10_2026",
+        "added": "2026-11-22T12:20:53+01:00"
+      },
+      "earlier": {
+        "pupil": "KISIEL_FILIP",
+        "path": "KISIEL_FILIP/12_10_2026/debugging_lab.py",
+        "assignment": "12_10_2026",
+        "added": "2026-10-19T00:18:19+02:00"
+      },
+      "jaccard": 0.9197,
+      "text": 0.9936,
+      "struct": 0.9937,
+      "chars": 6539
+    },
+    {
+      "sameCommit": false,
+      "later": {
+        "pupil": "PAWLOWICZ_WOJCIECH",
+        "path": "PAWLOWICZ_WOJCIECH/16_11_2026/bank_account.py",
+        "assignment": "16_11_2026",
+        "added": "2026-11-22T12:20:53+01:00"
+      },
+      "earlier": {
+        "pupil": "GAWRYSZCZAK_ADAM",
+        "path": "GAWRYSZCZAK_ADAM/16.11.2026/bank_account.py",
+        "assignment": "16.11.2026",
+        "added": "2026-11-16T19:42:04+01:00"
+      },
+      "jaccard": 0.791,
+      "text": 0.9906,
+      "struct": 0.982,
+      "chars": 843
+    },
+    {
+      "sameCommit": false,
+      "later": {
         "pupil": "GAWRYSZCZAK_ADAM",
         "path": "GAWRYSZCZAK_ADAM/16.11.2026/bank_account.py",
         "assignment": "16.11.2026",
@@ -112,6 +188,44 @@
       "text": 0.9906,
       "struct": 0.982,
       "chars": 843
+    },
+    {
+      "sameCommit": false,
+      "later": {
+        "pupil": "PAWLOWICZ_WOJCIECH",
+        "path": "PAWLOWICZ_WOJCIECH/02_11_2026/test_text_tools.py",
+        "assignment": "02_11_2026",
+        "added": "2026-11-22T12:20:53+01:00"
+      },
+      "earlier": {
+        "pupil": "ROZYCKI_NATAN",
+        "path": "ROZYCKI_NATAN/02_11_2026/test_text_tools.py",
+        "assignment": "02_11_2026",
+        "added": "2026-11-09T00:59:04+01:00"
+      },
+      "jaccard": 0.6693,
+      "text": 0.8967,
+      "struct": 0.9184,
+      "chars": 1133
+    },
+    {
+      "sameCommit": false,
+      "later": {
+        "pupil": "PAWLOWICZ_WOJCIECH",
+        "path": "PAWLOWICZ_WOJCIECH/02_11_2026/calculator.py",
+        "assignment": "02_11_2026",
+        "added": "2026-11-22T12:20:53+01:00"
+      },
+      "earlier": {
+        "pupil": "BOBROWSKI_ALAN",
+        "path": "BOBROWSKI_ALAN/02_11_2026/calculator.py",
+        "assignment": "02_11_2026",
+        "added": "2026-11-09T01:31:03+01:00"
+      },
+      "jaccard": 0.6473,
+      "text": 0.9569,
+      "struct": 0.9824,
+      "chars": 336
     },
     {
       "sameCommit": false,
@@ -283,6 +397,34 @@
     },
     {
       "pupils": [
+        "PAWLOWICZ_WOJCIECH",
+        "ROZYCKI_NATAN"
+      ],
+      "paths": [
+        "PAWLOWICZ_WOJCIECH/26_10_2026/debugging_lab.py",
+        "ROZYCKI_NATAN/06_10_2026/debugging_lab.py"
+      ],
+      "jaccard": 0.5756,
+      "text": 0.6483,
+      "struct": 0.6742,
+      "chars": 3538
+    },
+    {
+      "pupils": [
+        "PAWLOWICZ_WOJCIECH",
+        "ROZYCKI_NATAN"
+      ],
+      "paths": [
+        "PAWLOWICZ_WOJCIECH/26_10_2026/debugging_lab.py",
+        "ROZYCKI_NATAN/12_10_2026/debugging_lab.py"
+      ],
+      "jaccard": 0.5756,
+      "text": 0.6483,
+      "struct": 0.6742,
+      "chars": 3538
+    },
+    {
+      "pupils": [
         "GAWRYSZCZAK_ADAM",
         "ZAHORODNII_DMYTRO"
       ],
@@ -378,34 +520,6 @@
       "text": 0.7298,
       "struct": 0.7896,
       "chars": 181
-    },
-    {
-      "pupils": [
-        "KWIATKOWSKI_SZYMON",
-        "ROZYCKI_NATAN"
-      ],
-      "paths": [
-        "KWIATKOWSKI_SZYMON/02_11_2026/test_updated_calculator.py",
-        "ROZYCKI_NATAN/02_11_2026/test_calculator.py"
-      ],
-      "jaccard": 0.4966,
-      "text": 0.915,
-      "struct": 0.943,
-      "chars": 1130
-    },
-    {
-      "pupils": [
-        "KISIEL_FILIP",
-        "STACHURSKI_FABIAN"
-      ],
-      "paths": [
-        "KISIEL_FILIP/02_11_2026/test_text_tools.py",
-        "STACHURSKI_FABIAN/2_11_2026/test-text-tools.py"
-      ],
-      "jaccard": 0.4965,
-      "text": 0.8128,
-      "struct": 0.8256,
-      "chars": 972
     }
   ]
 }
