@@ -1,9 +1,9 @@
 {
-  "generated": "c4269514cd344773867487aad07b7c93beaff13c",
+  "generated": "4e4d5f2cea090a1b6cd64ad8cf7b9bb618522094",
   "minChars": 100,
   "threshold": 0.6,
-  "fileCount": 141,
-  "pupilCount": 9,
+  "fileCount": 144,
+  "pupilCount": 10,
   "skipped": [
     {
       "path": "BOBROWSKI_ALAN/26_10_2026/1.py",
@@ -273,17 +273,17 @@
     {
       "sameCommit": false,
       "later": {
+        "pupil": "GAWRYSZCZAK_ADAM",
+        "path": "GAWRYSZCZAK_ADAM/16_11_2026/bank_account.py",
+        "assignment": "16_11_2026",
+        "added": "2026-11-23T16:14:02+01:00"
+      },
+      "earlier": {
         "pupil": "BOBROWSKI_ALAN",
         "path": "BOBROWSKI_ALAN/16_11_2026/bank_account.py",
         "assignment": "16_11_2026",
         "added": "2026-11-22T22:11:07+01:00"
       },
-      "earlier": {
-        "pupil": "GAWRYSZCZAK_ADAM",
-        "path": "GAWRYSZCZAK_ADAM/16.11.2026/bank_account.py",
-        "assignment": "16.11.2026",
-        "added": "2026-11-16T19:42:04+01:00"
-      },
       "jaccard": 0.791,
       "text": 0.9906,
       "struct": 0.982,
@@ -292,17 +292,17 @@
     {
       "sameCommit": false,
       "later": {
+        "pupil": "GAWRYSZCZAK_ADAM",
+        "path": "GAWRYSZCZAK_ADAM/16_11_2026/bank_account.py",
+        "assignment": "16_11_2026",
+        "added": "2026-11-23T16:14:02+01:00"
+      },
+      "earlier": {
         "pupil": "PAWLOWICZ_WOJCIECH",
         "path": "PAWLOWICZ_WOJCIECH/16_11_2026/bank_account.py",
         "assignment": "16_11_2026",
         "added": "2026-11-22T12:20:53+01:00"
       },
-      "earlier": {
-        "pupil": "GAWRYSZCZAK_ADAM",
-        "path": "GAWRYSZCZAK_ADAM/16.11.2026/bank_account.py",
-        "assignment": "16.11.2026",
-        "added": "2026-11-16T19:42:04+01:00"
-      },
       "jaccard": 0.791,
       "text": 0.9906,
       "struct": 0.982,
@@ -311,17 +311,17 @@
     {
       "sameCommit": false,
       "later": {
+        "pupil": "GAWRYSZCZAK_ADAM",
+        "path": "GAWRYSZCZAK_ADAM/16_11_2026/bank_account.py",
+        "assignment": "16_11_2026",
+        "added": "2026-11-23T16:14:02+01:00"
+      },
+      "earlier": {
         "pupil": "ROZYCKI_NATAN",
         "path": "ROZYCKI_NATAN/16_11_2026/bank_account.py",
         "assignment": "16_11_2026",
         "added": "2026-11-23T01:39:59+01:00"
       },
-      "earlier": {
-        "pupil": "GAWRYSZCZAK_ADAM",
-        "path": "GAWRYSZCZAK_ADAM/16.11.2026/bank_account.py",
-        "assignment": "16.11.2026",
-        "added": "2026-11-16T19:42:04+01:00"
-      },
       "jaccard": 0.791,
       "text": 0.9906,
       "struct": 0.982,
@@ -331,9 +331,9 @@
       "sameCommit": false,
       "later": {
         "pupil": "GAWRYSZCZAK_ADAM",
-        "path": "GAWRYSZCZAK_ADAM/16.11.2026/bank_account.py",
-        "assignment": "16.11.2026",
-        "added": "2026-11-16T19:42:04+01:00"
+        "path": "GAWRYSZCZAK_ADAM/16_11_2026/bank_account.py",
+        "assignment": "16_11_2026",
+        "added": "2026-11-23T16:14:02+01:00"
       },
       "earlier": {
         "pupil": "ZAHORODNII_DMYTRO",
@@ -404,18 +404,18 @@
       "chars": 1413
     },
     {
-      "sameCommit": false,
+      "sameCommit": true,
       "later": {
         "pupil": "STACHURSKI_FABIAN",
-        "path": "STACHURSKI_FABIAN/2_11_2026/test-text-tools.py",
-        "assignment": "2_11_2026",
-        "added": "2026-11-21T11:33:52+01:00"
+        "path": "STACHURSKI_FABIAN/02_11_2026/test-text-tools.py",
+        "assignment": "02_11_2026",
+        "added": "2026-11-23T16:14:02+01:00"
       },
       "earlier": {
         "pupil": "GAWRYSZCZAK_ADAM",
-        "path": "GAWRYSZCZAK_ADAM/2_11_2026/test_text_tools.py",
-        "assignment": "2_11_2026",
-        "added": "2026-11-16T19:34:56+01:00"
+        "path": "GAWRYSZCZAK_ADAM/02_11_2026/test_text_tools.py",
+        "assignment": "02_11_2026",
+        "added": "2026-11-23T16:14:02+01:00"
       },
       "jaccard": 0.6072,
       "text": 0.9374,
@@ -426,9 +426,9 @@
       "sameCommit": false,
       "later": {
         "pupil": "STACHURSKI_FABIAN",
-        "path": "STACHURSKI_FABIAN/2_11_2026/test-text-tools.py",
-        "assignment": "2_11_2026",
-        "added": "2026-11-21T11:33:52+01:00"
+        "path": "STACHURSKI_FABIAN/02_11_2026/test-text-tools.py",
+        "assignment": "02_11_2026",
+        "added": "2026-11-23T16:14:02+01:00"
       },
       "earlier": {
         "pupil": "ZAHORODNII_DMYTRO",
@@ -577,7 +577,7 @@
         "KISIEL_FILIP"
       ],
       "paths": [
-        "GAWRYSZCZAK_ADAM/2_11_2026/test_text_tools.py",
+        "GAWRYSZCZAK_ADAM/02_11_2026/test_text_tools.py",
         "KISIEL_FILIP/02_11_2026/test_text_tools.py"
       ],
       "jaccard": 0.5846,
@@ -619,7 +619,7 @@
         "ZAHORODNII_DMYTRO"
       ],
       "paths": [
-        "GAWRYSZCZAK_ADAM/2_11_2026/test_text_tools.py",
+        "GAWRYSZCZAK_ADAM/02_11_2026/test_text_tools.py",
         "ZAHORODNII_DMYTRO/02_11_2026/test_text_tools.py"
       ],
       "jaccard": 0.5611,
@@ -634,7 +634,7 @@
       ],
       "paths": [
         "PAWLOWSKI_FILIP/02_11_2026/calculator.py",
-        "STACHURSKI_FABIAN/2_11_2026/calculator.py"
+        "STACHURSKI_FABIAN/02_11_2026/calculator.py"
       ],
       "jaccard": 0.5609,
       "text": 0.6408,
@@ -675,8 +675,8 @@
         "STACHURSKI_FABIAN"
       ],
       "paths": [
-        "GAWRYSZCZAK_ADAM/2_11_2026/test_calculator.py",
-        "STACHURSKI_FABIAN/2_11_2026/test-calculator.py"
+        "GAWRYSZCZAK_ADAM/02_11_2026/test_calculator.py",
+        "STACHURSKI_FABIAN/02_11_2026/test-calculator.py"
       ],
       "jaccard": 0.5168,
       "text": 0.8937,

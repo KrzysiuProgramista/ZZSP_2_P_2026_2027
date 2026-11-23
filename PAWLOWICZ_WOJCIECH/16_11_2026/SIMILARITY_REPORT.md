@@ -9,7 +9,6 @@ Pupil folder: `PAWLOWICZ_WOJCIECH`
 | your file | similarity | length |
 |---|---|---|
 | `PAWLOWICZ_WOJCIECH/16_11_2026/bank_account.py` | **100%** | 859 chars |
-| `PAWLOWICZ_WOJCIECH/16_11_2026/bank_account.py` | **79%** | 859 chars |
 
 Flagged because the overlap is at or above 60% on a substantial amount of code.
 

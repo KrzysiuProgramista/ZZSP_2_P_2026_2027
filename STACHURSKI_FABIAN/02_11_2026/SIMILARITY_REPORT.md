@@ -8,10 +8,13 @@ Pupil folder: `STACHURSKI_FABIAN`
 
 | your file | similarity | length |
 |---|---|---|
-| `STACHURSKI_FABIAN/2_11_2026/test-text-tools.py` | **61%** | 972 chars |
-| `STACHURSKI_FABIAN/2_11_2026/test-text-tools.py` | **61%** | 972 chars |
+| `STACHURSKI_FABIAN/02_11_2026/test-text-tools.py` | **61%** | 972 chars |
+| `STACHURSKI_FABIAN/02_11_2026/test-text-tools.py` | **61%** | 972 chars |
 
 Flagged because the overlap is at or above 60% on a substantial amount of code.
+
+Both submissions arrived in the same commit, so nobody was 'first'. 
+This same note is in the other folder too - it is not pointing at you.
 
 ### What to do
 
