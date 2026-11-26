@@ -2,6 +2,7 @@ def _check_numeric(value):
     if isinstance(value, bool) or not isinstance(value, (int, float)):
         raise TypeError("Arguments must be numeric")
 
+nigger
 
 def add(a, b):
     return a + b
