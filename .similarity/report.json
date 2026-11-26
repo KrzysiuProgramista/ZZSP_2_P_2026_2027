@@ -1,5 +1,5 @@
 {
-  "generated": "4e4d5f2cea090a1b6cd64ad8cf7b9bb618522094",
+  "generated": "bb586948456fd6a06ef923a29e2b39c9bc5274f9",
   "minChars": 100,
   "threshold": 0.6,
   "fileCount": 144,
@@ -630,20 +630,6 @@
     {
       "pupils": [
         "PAWLOWSKI_FILIP",
-        "STACHURSKI_FABIAN"
-      ],
-      "paths": [
-        "PAWLOWSKI_FILIP/02_11_2026/calculator.py",
-        "STACHURSKI_FABIAN/02_11_2026/calculator.py"
-      ],
-      "jaccard": 0.5609,
-      "text": 0.6408,
-      "struct": 0.3993,
-      "chars": 349
-    },
-    {
-      "pupils": [
-        "PAWLOWSKI_FILIP",
         "ROZYCKI_NATAN"
       ],
       "paths": [
@@ -668,6 +654,20 @@
       "text": 0.8161,
       "struct": 0.8214,
       "chars": 943
+    },
+    {
+      "pupils": [
+        "PAWLOWSKI_FILIP",
+        "STACHURSKI_FABIAN"
+      ],
+      "paths": [
+        "PAWLOWSKI_FILIP/02_11_2026/calculator.py",
+        "STACHURSKI_FABIAN/02_11_2026/calculator.py"
+      ],
+      "jaccard": 0.5503,
+      "text": 0.6348,
+      "struct": 0.4342,
+      "chars": 349
     },
     {
       "pupils": [
