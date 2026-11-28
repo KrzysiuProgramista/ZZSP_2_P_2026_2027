@@ -15,8 +15,10 @@ Other modes
 from __future__ import annotations
 
 import argparse
+import json
 import random
 import sys
+from pathlib import Path
 from dataclasses import dataclass
 
 # gap between the pipes, and scroll speed in pixels per frame (60 fps)
@@ -28,6 +30,59 @@ DIFFICULTIES = {
     "normal": {"gap": 130, "speed": 2.3},
     "hard": {"gap": 110, "speed": 2.5},
 }
+
+
+HIGH_SCORE_FILE = Path(__file__).resolve().parent / "flappy_scores.json"
+
+
+def default_high_scores() -> dict[str, int]:
+    """Return an empty high-score table for every difficulty."""
+    return {difficulty: 0 for difficulty in DIFFICULTIES}
+
+
+def load_high_scores(path: str | Path = HIGH_SCORE_FILE) -> dict[str, int]:
+    """Load records from JSON; invalid or missing data safely becomes zeroes."""
+    scores = default_high_scores()
+    try:
+        with open(path, "r", encoding="utf-8") as file:
+            data = json.load(file)
+    except (OSError, json.JSONDecodeError, UnicodeDecodeError):
+        return scores
+
+    if not isinstance(data, dict):
+        return scores
+
+    for difficulty in DIFFICULTIES:
+        value = data.get(difficulty)
+        if isinstance(value, int) and not isinstance(value, bool) and value >= 0:
+            scores[difficulty] = value
+    return scores
+
+
+def save_high_scores(scores: dict, path: str | Path = HIGH_SCORE_FILE) -> None:
+    """Save a sanitized high-score table as JSON."""
+    clean = default_high_scores()
+    if isinstance(scores, dict):
+        for difficulty in DIFFICULTIES:
+            value = scores.get(difficulty)
+            if isinstance(value, int) and not isinstance(value, bool) and value >= 0:
+                clean[difficulty] = value
+    with open(path, "w", encoding="utf-8") as file:
+        json.dump(clean, file, indent=2)
+
+
+def update_high_score(scores: dict[str, int], difficulty: str, score: int,
+                      path: str | Path = HIGH_SCORE_FILE) -> bool:
+    """Persist score only if it beats the selected difficulty's record."""
+    if difficulty not in DIFFICULTIES:
+        raise ValueError(f"unknown difficulty: {difficulty}")
+    if not isinstance(score, int) or isinstance(score, bool) or score < 0:
+        return False
+    if score <= scores.get(difficulty, 0):
+        return False
+    scores[difficulty] = score
+    save_high_scores(scores, path)
+    return True
 
 try:  # tkinter is optional: --selftest and --simulate need no display
     import tkinter as tk
@@ -71,12 +126,18 @@ class FlappyGame:
     # [100, 440], which can demand a 340 px climb between two pipes that are only
     # 150 px apart — unwinnable by construction. Clamping keeps runs fair.
     GAP_STEP_RATIO = 0.6
+    ADAPTIVE_SCORE_STEP = 5
+    ADAPTIVE_GAP_DECREASE = 2
+    ADAPTIVE_SPEED_INCREASE = 0.15
+    MIN_GAP = 100
+    MAX_SPEED = 4.0
 
     def __init__(self, rng: random.Random | None = None,
-                 gap: int = 110, speed: float = 2.3):
+                 gap: int = 110, speed: float = 2.3, adaptive: bool = False):
         self.rng = rng or random.Random()
-        self.gap = gap
-        self.speed = speed
+        self.base_gap = gap
+        self.base_speed = speed
+        self.adaptive = adaptive
         self.flap_rise = self._climb_height()
         self.reset()
 
@@ -94,6 +155,10 @@ class FlappyGame:
     # -- setup ------------------------------------------------------------- #
 
     def reset(self) -> None:
+        # A restart begins a fresh adaptive run from its original preset.
+        self.gap = self.base_gap
+        self.speed = self.base_speed
+        self.adaptive_level = 0
         self.bird_y = self.HEIGHT / 2
         self.bird_vy = 0.0
         self.pipes: list[Pipe] = []
@@ -141,6 +206,8 @@ class FlappyGame:
             if not pipe.passed and pipe.x + self.PIPE_W < self.BIRD_X:
                 pipe.passed = True
                 self.score += 1
+                if self.adaptive:
+                    self._apply_adaptive_difficulty()
                 events.append(f"score:{self.score}")
 
         while self.pipes and self.pipes[0].x + self.PIPE_W < 0:
@@ -152,6 +219,15 @@ class FlappyGame:
             self.death_reason = reason
             events.append(f"over:{reason}")
         return events
+
+    def _apply_adaptive_difficulty(self) -> None:
+        """Increase difficulty once per five pipes, respecting safe limits."""
+        target_level = self.score // self.ADAPTIVE_SCORE_STEP
+        while self.adaptive_level < target_level:
+            self.adaptive_level += 1
+            self.gap = max(self.MIN_GAP, self.gap - self.ADAPTIVE_GAP_DECREASE)
+            self.speed = min(self.MAX_SPEED,
+                             self.speed + self.ADAPTIVE_SPEED_INCREASE)
 
     def _spawn_pipe(self) -> None:
         previous = self.pipes[-1].gap_y if self.pipes else self.HEIGHT / 2
@@ -217,9 +293,10 @@ class FlappyGame:
 
 
 def run_simulate(seconds: float, seed: int | None = None, gap: int = 110,
-                 speed: float = 2.3, verbose: bool = True) -> FlappyGame:
+                 speed: float = 2.3, verbose: bool = True,
+                 adaptive: bool = False) -> FlappyGame:
     """Headless flight with the autopilot — used by --simulate and the self test."""
-    game = FlappyGame(random.Random(seed), gap=gap, speed=speed)
+    game = FlappyGame(random.Random(seed), gap=gap, speed=speed, adaptive=adaptive)
     game.flap()
     for frame in range(int(seconds * 60)):
         if game.over:
@@ -247,12 +324,17 @@ class FlappyGUI:
     MUTED = "#8e8e93"
     TICK_MS = 16  # ~60 frames per second
 
-    def __init__(self, gap: int = 110, speed: float = 2.3, seed: int | None = None):
+    def __init__(self, gap: int = 110, speed: float = 2.3, seed: int | None = None,
+                 difficulty: str = "normal"):
         self.seed = seed
         self.gap = gap
         self.speed = speed
-        self.game = FlappyGame(random.Random(seed), gap=gap, speed=speed)
-        self.best = 0
+        self.adaptive = difficulty == "adaptive"
+        self.difficulty = difficulty if difficulty in DIFFICULTIES else "normal"
+        self.game = FlappyGame(random.Random(seed), gap=gap, speed=speed,
+                               adaptive=self.adaptive)
+        self.high_scores = load_high_scores()
+        self.best = self.high_scores[self.difficulty]
         self.paused = False
         self.after_id: str | None = None
 
@@ -289,8 +371,9 @@ class FlappyGUI:
         elif key == "p":
             self.paused = not self.paused
         elif key in {"1", "2", "3"}:
-            preset = list(DIFFICULTIES.values())[int(key) - 1]
-            self.set_difficulty(preset["gap"], preset["speed"])
+            difficulty = list(DIFFICULTIES)[int(key) - 1]
+            preset = DIFFICULTIES[difficulty]
+            self.set_difficulty(preset["gap"], preset["speed"], difficulty)
         elif key == "escape":
             self.root.destroy()
 
@@ -301,8 +384,16 @@ class FlappyGUI:
         self.paused = False
         self._draw()
 
-    def set_difficulty(self, gap: int, speed: float) -> None:
+    def set_difficulty(self, gap: int, speed: float, difficulty: str | None = None) -> None:
         self.gap, self.speed = gap, speed
+        self.adaptive = False
+        if difficulty in DIFFICULTIES:
+            self.difficulty = difficulty
+        else:
+            self.difficulty = next((name for name, preset in DIFFICULTIES.items()
+                                    if preset["gap"] == gap and preset["speed"] == speed),
+                                   self.difficulty)
+        self.best = self.high_scores[self.difficulty]
         self.game = FlappyGame(random.Random(self.seed), gap=gap, speed=speed)
         self.restart()
 
@@ -312,7 +403,11 @@ class FlappyGUI:
         if not self.paused:
             for event in self.game.step():
                 if event.startswith("score:"):
-                    self.best = max(self.best, int(event.split(":")[1]))
+                    score = int(event.split(":")[1])
+                    # Adaptive runs do not alter Easy/Normal/Hard records.
+                    if (not self.adaptive and
+                            update_high_score(self.high_scores, self.difficulty, score)):
+                        self.best = self.high_scores[self.difficulty]
             self._draw()
         self.after_id = self.root.after(self.TICK_MS, self._tick)
 
@@ -341,6 +436,13 @@ class FlappyGUI:
 
         canvas.create_text(w / 2, 56, text=str(game.score), fill=self.FG,
                            font=("Helvetica", 32, "bold"))
+        mode_label = "ADAPTIVE" if self.adaptive else self.difficulty.upper()
+        canvas.create_text(w / 2, 20, text=mode_label, fill=self.MUTED,
+                           font=("Helvetica", 9, "bold"))
+        if self.adaptive:
+            canvas.create_text(w / 2, 88,
+                               text=f"Gap {game.gap}   Speed {game.speed:.2f}",
+                               fill=self.MUTED, font=("Helvetica", 10))
 
         if game.state == "ready":
             canvas.create_text(w / 2, h / 2 - 80, fill=self.MUTED,
@@ -506,6 +608,19 @@ def selftest(verbose: bool = True) -> int:
             break
     check("not flapping ends the run", game.over and game.death_reason == "ground")
 
+    # Adaptive mode increases difficulty every five pipes and enforces limits.
+    adaptive = FlappyGame(random.Random(9), gap=110, speed=2.5, adaptive=True)
+    adaptive.score = 5
+    adaptive._apply_adaptive_difficulty()
+    check("adaptive mode increases difficulty at five pipes",
+          adaptive.gap == 108 and abs(adaptive.speed - 2.65) < 1e-9)
+    adaptive.gap = adaptive.MIN_GAP
+    adaptive.speed = adaptive.MAX_SPEED
+    adaptive.score = 100
+    adaptive._apply_adaptive_difficulty()
+    check("adaptive mode respects minimum gap and maximum speed",
+          adaptive.gap >= adaptive.MIN_GAP and adaptive.speed <= adaptive.MAX_SPEED)
+
     print(f"\n{checks} checks passed.")
     return 0
 
@@ -519,8 +634,9 @@ def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(
         description="Flappy (Tkinter GUI). Use --selftest or --simulate without a display.",
     )
-    parser.add_argument("-d", "--difficulty", choices=DIFFICULTIES, default="normal",
-                        help="gap and speed preset (default: normal)")
+    parser.add_argument("-d", "--difficulty", choices=[*DIFFICULTIES, "adaptive"],
+                        default="normal",
+                        help="difficulty preset: easy, normal, hard or adaptive")
     parser.add_argument("--gap", type=int, help="custom gap size in pixels")
     parser.add_argument("--speed", type=float, help="custom scroll speed in pixels per frame")
     parser.add_argument("--seed", type=int, help="fixed random seed (repeatable pipes)")
@@ -533,12 +649,13 @@ def main(argv: list[str] | None = None) -> int:
         print("running Flappy self tests...")
         return selftest()
 
-    preset = DIFFICULTIES[args.difficulty]
+    adaptive = args.difficulty == "adaptive"
+    preset = DIFFICULTIES["normal"] if adaptive else DIFFICULTIES[args.difficulty]
     gap = args.gap if args.gap is not None else preset["gap"]
     speed = args.speed if args.speed is not None else preset["speed"]
 
     if args.simulate is not None:
-        game = run_simulate(args.simulate, args.seed, gap, speed)
+        game = run_simulate(args.simulate, args.seed, gap, speed, adaptive=adaptive)
         outcome = f"crashed into the {game.death_reason}" if game.over else "still flying"
         print(f"\nautopilot score {game.score} after {args.simulate:g}s — {outcome}")
         return 0
@@ -547,7 +664,7 @@ def main(argv: list[str] | None = None) -> int:
         print("tkinter is unavailable — try --simulate or --selftest.", file=sys.stderr)
         return 1
     try:
-        FlappyGUI(gap, speed, args.seed).run()
+        FlappyGUI(gap, speed, args.seed, args.difficulty).run()
     except tk.TclError as exc:  # no display
         print(f"cannot open a window ({exc}); try --simulate instead.", file=sys.stderr)
         return 1

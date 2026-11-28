@@ -15,8 +15,9 @@ from flappy_train import Brain
 
 
 class AIFlappy(FlappyGUI):
-    def __init__(self, brain: Brain, gap: int, speed: float, seed: int | None):
-        super().__init__(gap, speed, seed)
+    def __init__(self, brain: Brain, gap: int, speed: float, seed: int | None,
+                 difficulty: str = "normal"):
+        super().__init__(gap, speed, seed, difficulty)
         self.brain = brain
         self.root.title("Flappy AI")
 
@@ -50,7 +51,7 @@ def main(argv: list[str] | None = None) -> int:
         print(f"{args.model} not found - run flappy_train.py first.", file=sys.stderr)
         return 1
     preset = DIFFICULTIES[args.difficulty]
-    AIFlappy(brain, preset["gap"], preset["speed"], args.seed).run()
+    AIFlappy(brain, preset["gap"], preset["speed"], args.seed, args.difficulty).run()
     return 0
 
 
